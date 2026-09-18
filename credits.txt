@@ -1,0 +1,36 @@
+Leaf & Root — Photography & Asset Credits
+=========================================
+
+All bonsai photograph(s) are used under the licence noted below and were
+sourced from Wikimedia Commons (https://commons.wikimedia.org). Images were
+resized and colour-graded for this design; no other alterations were made.
+
+FILE                       AUTHOR                    LICENCE        SOURCE
+------------------------------------------------------------------------------------------
+bonsai-black-pine.jpg      Sage Ross                 CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Japanese_Black_Pine_bonsai,_2011-05-29.jpg
+bonsai-literati-wide.jpg   PierreSelim               CC BY 3.0      https://commons.wikimedia.org/wiki/File:BBG_-_Ficus_deltoidea_-_Literati.jpg
+bonsai-indoor.jpg          GalacticCuriosity         CC BY 4.0      https://commons.wikimedia.org/wiki/File:Indoor_bonsai_tree.jpg
+bonsai-adenium.jpg         Ray in Manila             CC BY 2.0      https://commons.wikimedia.org/wiki/File:Kalachuchi_Bonsai_(Adenium_Obesum)_in_my_garden.jpg
+bonsai-ficus.jpg           Аимаина хикари            CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Ficus_microcarpa_bonsai_Kiev.jpg
+bonsai-forest.jpg          Sarah Stierch             CC BY 4.0      https://commons.wikimedia.org/wiki/File:Bald_Cypress_-_National_Bonsai_&_Penjing_Museum_-_Washington,_D.C._-_Sarah_Stierch.jpg
+bonsai-wire-detail.jpg     Ragesoss                  CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Pine_bonsai_with_deep_wire_scars.jpg
+bonsai-tools.jpg           Ragesoss                  CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Bonsai_tools.jpg
+bonsai-ligustrum.jpg       Cephas                    CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Ligustrum_sinense_penjing_JB.jpg
+bonsai-green.jpg           Cephas                    CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Ligustrum_sinense_penjing_JB.jpg
+bonsai-scroll.jpg          Sage Ross                 CC BY-SA 3.0   https://commons.wikimedia.org/wiki/File:Bonsai_display_with_Seiju_elm,_miniature_hosta_and_hanging_scroll,_12_July_2009.jpg
+bonsai-cascade.jpg         Shuvaev                   CC BY 4.0      https://commons.wikimedia.org/wiki/File:Chamaecyparis_obtusa_bonsai,_Longwood_Gardens_2023.jpg
+bonsai-juniper-rock.jpg    Nathan Andersen           CC BY-SA 4.0   https://commons.wikimedia.org/wiki/File:California-juniper-bonsai-collection.jpg
+bonsai-red-pine.jpg        APK                       CC BY 4.0      https://commons.wikimedia.org/wiki/File:Japanese_red_pine,_United_States_National_Bonsai_&_Penjing_Museum.jpg
+bonsai-maple.jpg           Tangopaso                 Public domain  https://commons.wikimedia.org/wiki/File:Ficus_carica_bonsai_A_D161101.jpg
+bonsai-maple-forest.jpg    Sarah Stierch             CC BY 4.0      https://commons.wikimedia.org/wiki/File:Trident_Maple_bonsai_203,_May_29,_2011_a_-_Stierch.jpg
+bonsai-balcony.jpg         Tangopaso                 Public domain  https://commons.wikimedia.org/wiki/File:Ficus_carica_bonsai_A_D180424.jpg
+bonsai-fig.jpg             Tangopaso                 Public domain  https://commons.wikimedia.org/wiki/File:Ficus_carica_bonsai_A_D151026.jpg
+
+Testimonial portraits (avatar-mariana.jpg, avatar-rafael.jpg, avatar-angela.jpg)
+are placeholder portraits from https://randomuser.me — free for use in design
+mockups and demos.
+
+Typefaces: Fraunces (SIL Open Font License 1.1), Nunito Sans (SIL OFL 1.1),
+Caveat (SIL OFL 1.1). All three are self-hosted under assets/fonts/.
+
+Leaf & Root is a fictional brand created for this design exercise.
