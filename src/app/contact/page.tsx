@@ -10,7 +10,7 @@ import PageHead from "@/components/PageHead";
 export const metadata: Metadata = pageMetadata({
   title: "Contact & Visit",
   description:
-    "Write to Leaf & Root, ask a grower a question, or visit the workshop at 14 Saging Street, Quezon City. We answer every message ourselves.",
+    "Write to Emerald Garden, ask a grower a question, or visit the workshop at 14 Saging Street, Quezon City. We answer every message ourselves.",
   path: "/contact",
 });
 
@@ -77,10 +77,10 @@ export default function ContactPage() {
                   <div>
                     <h4>Write to us</h4>
                     <p>
-                      <a href="mailto:hello@leafandroot.ph">hello@leafandroot.ph</a>
+                      <a href="mailto:hello@emeraldgarden.ph">hello@emeraldgarden.ph</a>
                       <br />
-                      <a href="mailto:care@leafandroot.ph">care@leafandroot.ph</a> — for
-                      sick trees
+                      <a href="mailto:care@emeraldgarden.ph">care@emeraldgarden.ph</a> —
+                      for sick trees
                     </p>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function ContactPage() {
                     fontSize="20"
                     fill="var(--brown)"
                   >
-                    Leaf &amp; Root
+                    Emerald Garden
                   </text>
                   <text
                     x="20"

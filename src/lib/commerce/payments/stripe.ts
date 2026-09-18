@@ -103,7 +103,7 @@ export const stripeProvider: PaymentProvider = {
       );
       return { paid: session.payment_status === "paid", reference, raw: session };
     } catch (error) {
-      console.error("[leaf-and-root] stripe verify failed:", error);
+      console.error("[emerald-garden] stripe verify failed:", error);
       return { paid: false, reference };
     }
   },

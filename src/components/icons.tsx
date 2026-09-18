@@ -12,23 +12,16 @@ export function BrandMark({ size = 32, ...props }: IconProps & { size?: number }
       aria-hidden="true"
       {...props}
     >
-      <path d="M16 29V13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
       <path
-        d="M16 19c-4.2 0-7.6-3.4-7.6-7.6C8.4 8.4 11.8 5 16 5s7.6 3.4 7.6 7.6c0 3.6-2.5 6.6-5.9 7.4"
+        d="M27 5C15.5 6.7 7.6 13.8 5 27c13.2-2.6 20.3-10.5 22-22z"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
       />
       <path
-        d="M16 13.4c-2.4 0-4.4-2-4.4-4.4M16 13.4c2.4 0 4.4-2 4.4-4.4"
+        d="M5 27C11 19.5 16.5 14.2 24 9.5"
         stroke="currentColor"
         strokeWidth="1.3"
-        strokeLinecap="round"
-      />
-      <path
-        d="M6.5 29h19"
-        stroke="currentColor"
-        strokeWidth="1.6"
         strokeLinecap="round"
       />
     </svg>

@@ -22,7 +22,7 @@ export default function Footer() {
               <BrandMark />
             </span>
             <span className="brand__text">
-              <span className="brand__name">Leaf &amp; Root</span>
+              <span className="brand__name">Emerald Garden</span>
               <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
             </span>
           </Link>
@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {year} Leaf &amp; Root. All rights reserved.</p>
+          <p>&copy; {year} Emerald Garden. All rights reserved.</p>
           <p className="footer__hand">
             Small trees. Big stories.
             <LeafGlyph width={20} height={20} />

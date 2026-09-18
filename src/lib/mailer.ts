@@ -1,7 +1,7 @@
 /**
  * Outbound mail for the two public forms.
  *
- * Set `RESEND_API_KEY` and `LEAF_AND_ROOT_INBOX` and submissions are delivered
+ * Set `RESEND_API_KEY` and `EMERALD_GARDEN_INBOX` and submissions are delivered
  * by email. With no transport configured the submission is still validated,
  * accepted and written to the server log, and `delivered: false` is reported
  * back — nothing is silently swallowed, and the UI never claims a delivery
@@ -24,14 +24,14 @@ const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const TIMEOUT_MS = 8000;
 
 export function mailTransportConfigured(): boolean {
-  return Boolean(process.env.RESEND_API_KEY && process.env.LEAF_AND_ROOT_INBOX);
+  return Boolean(process.env.RESEND_API_KEY && process.env.EMERALD_GARDEN_INBOX);
 }
 
 export async function deliver(message: MailMessage): Promise<DeliveryResult> {
   if (!mailTransportConfigured()) {
     console.info(
-      "[leaf-and-root] mail transport not configured; logging instead\n" +
-        `  to: ${message.to ?? process.env.LEAF_AND_ROOT_INBOX ?? "n/a"}\n` +
+      "[emerald-garden] mail transport not configured; logging instead\n" +
+        `  to: ${message.to ?? process.env.EMERALD_GARDEN_INBOX ?? "n/a"}\n` +
         `  subject: ${message.subject}\n` +
         `  reply-to: ${message.replyTo ?? "n/a"}\n` +
         message.text
@@ -54,8 +54,8 @@ export async function deliver(message: MailMessage): Promise<DeliveryResult> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.LEAF_AND_ROOT_FROM ?? "Leaf & Root <onboarding@resend.dev>",
-        to: [message.to ?? (process.env.LEAF_AND_ROOT_INBOX as string)],
+        from: process.env.EMERALD_GARDEN_FROM ?? "Emerald Garden <onboarding@resend.dev>",
+        to: [message.to ?? (process.env.EMERALD_GARDEN_INBOX as string)],
         subject: message.subject,
         text: message.text,
         ...(message.replyTo ? { reply_to: message.replyTo } : {}),
@@ -65,14 +65,14 @@ export async function deliver(message: MailMessage): Promise<DeliveryResult> {
     if (!response.ok) {
       const detail = await response.text().catch(() => "");
       console.error(
-        `[leaf-and-root] mail provider responded ${response.status} ${detail.slice(0, 300)}`,
+        `[emerald-garden] mail provider responded ${response.status} ${detail.slice(0, 300)}`,
       );
       return { delivered: false, reason: `provider-${response.status}` };
     }
     return { delivered: true };
   } catch (error) {
     const aborted = error instanceof Error && error.name === "AbortError";
-    console.error("[leaf-and-root] mail delivery failed:", error);
+    console.error("[emerald-garden] mail delivery failed:", error);
     return { delivered: false, reason: aborted ? "timeout" : "network" };
   } finally {
     clearTimeout(timer);

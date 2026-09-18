@@ -39,12 +39,12 @@ export default function Header() {
   return (
     <header className={`site-header${stuck ? " is-stuck" : ""}`}>
       <div className="wrap header-inner">
-        <Link className="brand" href="/" aria-label="Leaf and Root — home">
+        <Link className="brand" href="/" aria-label="Emerald Garden — home">
           <span className="brand__mark">
             <BrandMark />
           </span>
           <span className="brand__text">
-            <span className="brand__name">Leaf &amp; Root</span>
+            <span className="brand__name">Emerald Garden</span>
             <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
           </span>
         </Link>

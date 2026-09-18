@@ -1,11 +1,11 @@
-# Leaf & Root
+# Emerald Garden
 
 A storefront for a small bonsai nursery — a design-led marketing site with a
 working commerce flow behind it. Built with Next.js App Router, React 19 and
 TypeScript, with no UI framework and no runtime dependencies beyond React.
 
-**[Live site](https://leaf-and-root-jet.vercel.app)** ·
-[CI](https://github.com/jewelcruzs0922-dev/leaf-and-root/actions) runs typecheck,
+**[Live site](https://emerald-garden.vercel.app)** ·
+[CI](https://github.com/jewelcruzs0922-dev/emerald-garden/actions) runs typecheck,
 lint, formatting and 57 end-to-end tests on every push.
 
 ![The home page](docs/home.jpg)
@@ -154,13 +154,13 @@ text node in the browser and computing its effective background.
 
 Copy `.env.example` to `.env.local`. Everything is optional.
 
-| Variable                                                      | Effect when set                                                                                                  |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `SITE_URL` (or `NEXT_PUBLIC_SITE_URL`)                        | Canonical URLs, sitemap and OpenGraph tags resolve to this origin. Server-side only, so either name works.       |
-| `RESEND_API_KEY`, `LEAF_AND_ROOT_INBOX`, `LEAF_AND_ROOT_FROM` | Contact, newsletter and order emails are actually delivered. Without them, submissions are validated and logged. |
-| `STRIPE_SECRET_KEY`                                           | Checkout switches from the mock provider to Stripe.                                                              |
-| `STRIPE_WEBHOOK_SECRET`                                       | Enables the webhook endpoint with signature verification.                                                        |
-| `LEAF_AND_ROOT_STORAGE=memory`                                | Forces in-memory storage. Detected automatically on a read-only filesystem.                                      |
+| Variable                                                        | Effect when set                                                                                                  |
+| --------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `SITE_URL` (or `NEXT_PUBLIC_SITE_URL`)                          | Canonical URLs, sitemap and OpenGraph tags resolve to this origin. Server-side only, so either name works.       |
+| `RESEND_API_KEY`, `EMERALD_GARDEN_INBOX`, `EMERALD_GARDEN_FROM` | Contact, newsletter and order emails are actually delivered. Without them, submissions are validated and logged. |
+| `STRIPE_SECRET_KEY`                                             | Checkout switches from the mock provider to Stripe.                                                              |
+| `STRIPE_WEBHOOK_SECRET`                                         | Enables the webhook endpoint with signature verification.                                                        |
+| `EMERALD_GARDEN_STORAGE=memory`                                 | Forces in-memory storage. Detected automatically on a read-only filesystem.                                      |
 
 ---
 

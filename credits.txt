@@ -1,4 +1,4 @@
-Leaf & Root — Photography & Asset Credits
+Emerald Garden — Photography & Asset Credits
 =========================================
 
 All bonsai photograph(s) are used under the licence noted below and were
@@ -33,4 +33,4 @@ mockups and demos.
 Typefaces: Fraunces (SIL Open Font License 1.1), Nunito Sans (SIL OFL 1.1),
 Caveat (SIL OFL 1.1). All three are self-hosted under assets/fonts/.
 
-Leaf & Root is a fictional brand created for this design exercise.
+Emerald Garden is a fictional brand created for this design exercise.

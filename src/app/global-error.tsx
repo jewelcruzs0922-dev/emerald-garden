@@ -28,7 +28,7 @@ export default function GlobalError({
       >
         <div style={{ maxWidth: "32rem", textAlign: "center" }}>
           <h1 style={{ fontSize: "1.8rem", margin: "0 0 .8rem" }}>
-            Leaf &amp; Root couldn&apos;t start up
+            Emerald Garden couldn&apos;t start up
           </h1>
           <p style={{ lineHeight: 1.7, color: "#4C4A3B", margin: "0 0 1.6rem" }}>
             Something went wrong before the page could render. Reloading usually sorts it

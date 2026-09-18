@@ -5,7 +5,7 @@ import { IconHeart, LeafGlyph } from "@/components/icons";
 const STORIES = [
   {
     quote:
-      "The quality is amazing! My Ficus arrived in perfect condition and it's already thriving. Highly recommend Leaf & Root!",
+      "The quality is amazing! My Ficus arrived in perfect condition and it's already thriving. Highly recommend Emerald Garden!",
     name: "Mariana Santos",
     location: "Quezon City",
     avatar: "/img/avatar-mariana.jpg",
@@ -19,7 +19,7 @@ const STORIES = [
   },
   {
     quote:
-      "Such a beautiful experience! The bonsai I received is even more stunning in person. Thank you, Leaf & Root!",
+      "Such a beautiful experience! The bonsai I received is even more stunning in person. Thank you, Emerald Garden!",
     name: "Angela Dela Torre",
     location: "Manila",
     avatar: "/img/avatar-angela.jpg",

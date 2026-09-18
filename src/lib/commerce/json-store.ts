@@ -18,7 +18,7 @@ import { join } from "node:path";
  *
  *   memory  — used automatically when the filesystem is not writable (a
  *             serverless deployment, a read-only container) or deliberately
- *             when LEAF_AND_ROOT_STORAGE=memory. Documents live in module
+ *             when EMERALD_GARDEN_STORAGE=memory. Documents live in module
  *             scope, so they survive for the life of a warm instance and are
  *             lost on restart.
  *
@@ -46,7 +46,7 @@ const memory = (shared.__leafAndRootMemory ??= new Map<string, unknown>());
  * front; otherwise the first failed write decides.
  */
 function fileStoreAvailable(): boolean {
-  if (process.env.LEAF_AND_ROOT_STORAGE === "memory") return false;
+  if (process.env.EMERALD_GARDEN_STORAGE === "memory") return false;
   return shared.__leafAndRootFileUnavailable !== true;
 }
 
@@ -59,7 +59,7 @@ function degradeToMemory(error: unknown): void {
   if (shared.__leafAndRootFallbackAnnounced) return;
   shared.__leafAndRootFallbackAnnounced = true;
   console.warn(
-    "[leaf-and-root] filesystem is not writable — using in-memory storage. " +
+    "[emerald-garden] filesystem is not writable — using in-memory storage. " +
       "Orders and inventory will not survive a restart. " +
       `Cause: ${error instanceof Error ? error.message : String(error)}`,
   );

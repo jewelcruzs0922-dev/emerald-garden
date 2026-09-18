@@ -105,7 +105,7 @@ const BENEFITS = [
 
 export default function Benefits() {
   return (
-    <section className="benefits" aria-label="Why buy from Leaf and Root">
+    <section className="benefits" aria-label="Why buy from Emerald Garden">
       <div className="wrap">
         <ul className="benefits__list">
           {BENEFITS.map((benefit) => (

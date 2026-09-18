@@ -10,7 +10,7 @@ import PageHead from "@/components/PageHead";
 export const metadata: Metadata = pageMetadata({
   title: "The Journal",
   description:
-    "Notes, care essays and small observations from the Leaf & Root workshop - a little independent magazine about growing things slowly.",
+    "Notes, care essays and small observations from the Emerald Garden workshop - a little independent magazine about growing things slowly.",
   path: "/journal",
 });
 

@@ -9,7 +9,7 @@ import PageHead from "@/components/PageHead";
 export const metadata: Metadata = pageMetadata({
   title: "Our Story",
   description:
-    "Leaf & Root began with a single bench, a watering can and a belief that nature brings peace, balance and beauty into everyday life.",
+    "Emerald Garden began with a single bench, a watering can and a belief that nature brings peace, balance and beauty into everyday life.",
   path: "/about",
 });
 
@@ -172,7 +172,7 @@ export default function AboutPage() {
               <span className="eyebrow">Our Story</span>
               <h2>More Than Plants, It's a Lifestyle.</h2>
               <p>
-                Leaf &amp; Root was born from a simple belief — that nature brings peace,
+                Emerald Garden was born from a simple belief — that nature brings peace,
                 balance, and beauty into our everyday lives. We grow and care for bonsai
                 trees for hobbyists, collectors, and anyone who wants to bring a little
                 more green into their space.

@@ -173,7 +173,7 @@ export async function POST(request: Request) {
       order: { ...order, payment: { ...order.payment, reference: session.reference } },
     });
   } catch (error) {
-    console.error("[leaf-and-root] checkout session failed:", error);
+    console.error("[emerald-garden] checkout session failed:", error);
     await orders().update(order.id, { status: "failed" });
     await releaseStock(claim);
     return NextResponse.json(

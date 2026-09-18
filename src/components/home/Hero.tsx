@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero__lede">
-            At Leaf &amp; Root, we bring nature closer to home with carefully grown bonsai
+            At Emerald Garden, we bring nature closer to home with carefully grown bonsai
             trees — perfect for beginners, collectors, and anyone who finds peace in
             greenery.
           </p>

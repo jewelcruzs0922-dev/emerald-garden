@@ -30,7 +30,7 @@ export default function MobileNav() {
             <BrandMark />
           </span>
           <span className="brand__text">
-            <span className="brand__name">Leaf &amp; Root</span>
+            <span className="brand__name">Emerald Garden</span>
             <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
           </span>
         </Link>

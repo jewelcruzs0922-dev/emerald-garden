@@ -14,12 +14,12 @@ const configuredUrl =
   process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl;
 
 export const SITE = {
-  name: "Leaf & Root",
+  name: "Emerald Garden",
   tagline: "Bonsai for a Greener Tomorrow",
-  legalName: "Leaf & Root Bonsai",
+  legalName: "Emerald Garden Bonsai",
   url: configuredUrl.replace(/\/$/, ""),
   locale: "en_PH",
-  email: "hello@leafandroot.ph",
+  email: "hello@emeraldgarden.ph",
   phone: "+63-2-8123-4567",
   foundingYear: 2018,
   address: {
@@ -30,9 +30,9 @@ export const SITE = {
     country: "PH",
   },
   sameAs: [
-    "https://instagram.com/leafandroot",
-    "https://facebook.com/leafandroot",
-    "https://pinterest.com/leafandroot",
+    "https://instagram.com/emeraldgarden",
+    "https://facebook.com/emeraldgarden",
+    "https://pinterest.com/emeraldgarden",
   ],
 } as const;
 
@@ -40,7 +40,7 @@ export const OG_IMAGE = {
   url: "/og.png",
   width: 1200,
   height: 630,
-  alt: "Leaf & Root � Small Trees, Big Peace",
+  alt: "Emerald Garden — Small Trees, Big Peace",
 } as const;
 export function absolute(path: string): string {
   return new URL(path, `${SITE.url}/`).toString();

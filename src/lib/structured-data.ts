@@ -60,7 +60,7 @@ export function productListSchema(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "The Leaf & Root Collection",
+    name: "The Emerald Garden Collection",
     numberOfItems: CATALOG.length,
     itemListElement: CATALOG.map((product, index) => ({
       "@type": "ListItem",

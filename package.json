@@ -1,8 +1,8 @@
 {
-  "name": "leaf-and-root",
+  "name": "emerald-garden",
   "version": "1.0.0",
   "private": true,
-  "description": "Leaf & Root — a boutique bonsai shop storefront, built with Next.js.",
+  "description": "Emerald Garden — a boutique bonsai shop storefront, built with Next.js.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

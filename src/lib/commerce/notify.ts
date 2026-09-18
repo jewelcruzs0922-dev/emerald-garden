@@ -48,7 +48,7 @@ export async function sendOrderConfirmation(order: Order): Promise<void> {
 
   await deliver({
     to: order.customer.email,
-    subject: `Your Leaf & Root order ${order.id}`,
+    subject: `Your Emerald Garden order ${order.id}`,
     text: `Thank you — your trees are being prepared.\n\n${body}`,
   });
 

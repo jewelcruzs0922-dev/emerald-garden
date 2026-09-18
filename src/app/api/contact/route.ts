@@ -50,7 +50,7 @@ export async function POST(request: Request) {
   }
 
   const result = await deliver({
-    subject: `[Leaf & Root] ${topic} — ${name}`,
+    subject: `[Emerald Garden] ${topic} — ${name}`,
     replyTo: email,
     text: [`Topic: ${topic}`, `From: ${name} <${email}>`, "", message].join("\n"),
   });

@@ -140,7 +140,7 @@ export default function StorySection() {
               It&apos;s a Lifestyle
             </h2>
             <p>
-              Leaf &amp; Root was born from a simple belief — that nature brings peace,
+              Emerald Garden was born from a simple belief — that nature brings peace,
               balance, and beauty into our everyday lives. We grow and care for bonsai
               trees for hobbyists, collectors, and anyone who wants to bring a little more
               green into their space.

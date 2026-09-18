@@ -12,7 +12,7 @@ export default function Error({
 }) {
   useEffect(() => {
     /* Hook your error reporter in here (Sentry, Axiom, …). */
-    console.error("[leaf-and-root] route error:", error);
+    console.error("[emerald-garden] route error:", error);
   }, [error]);
 
   return (

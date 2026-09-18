@@ -12,7 +12,7 @@ export async function GET() {
       { headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
-    console.error("[leaf-and-root] inventory read failed:", error);
+    console.error("[emerald-garden] inventory read failed:", error);
     return NextResponse.json({ ok: false, availability: {} }, { status: 500 });
   }
 }

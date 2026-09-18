@@ -9,7 +9,7 @@ import ShopClient from "@/components/shop/ShopClient";
 export const metadata: Metadata = pageMetadata({
   title: "Shop the Collection",
   description:
-    "Browse the Leaf & Root collection of carefully grown bonsai trees for indoor and outdoor spaces, from beginner-friendly ficus to collector pines.",
+    "Browse the Emerald Garden collection of carefully grown bonsai trees for indoor and outdoor spaces, from beginner-friendly ficus to collector pines.",
   path: "/shop",
 });
 

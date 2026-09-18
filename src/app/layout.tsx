@@ -67,15 +67,15 @@ const caveatBrush = localFont({
   display: "swap",
 });
 
-const HOME_TITLE = "Leaf & Root — Bonsai for a Greener Tomorrow";
+const HOME_TITLE = "Emerald Garden — Bonsai for a Greener Tomorrow";
 const HOME_DESCRIPTION =
-  "Leaf & Root is a small bonsai shop bringing nature closer to home with carefully grown bonsai trees for beginners, hobbyists and collectors.";
+  "Emerald Garden is a small bonsai shop bringing nature closer to home with carefully grown bonsai trees for beginners, hobbyists and collectors.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
     default: HOME_TITLE,
-    template: "%s — Leaf & Root Bonsai",
+    template: "%s — Emerald Garden Bonsai",
   },
   description: HOME_DESCRIPTION,
   applicationName: SITE.name,
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Leaf & Root — Small Trees, Big Peace",
+        alt: "Emerald Garden — Small Trees, Big Peace",
       },
     ],
   },
