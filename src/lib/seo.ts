@@ -2,11 +2,22 @@ import type { Metadata } from "next";
 
 const fallbackUrl = "http://localhost:3000";
 
+/**
+ * The public origin, used for canonical URLs, the sitemap and social cards.
+ *
+ * Only ever read on the server, so the `NEXT_PUBLIC_` prefix is not required —
+ * `SITE_URL` is preferred, and the public name is still honoured so an existing
+ * deployment does not silently fall back to localhost. Either way the value is
+ * a public web address, not a secret.
+ */
+const configuredUrl =
+  process.env.SITE_URL ?? process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl;
+
 export const SITE = {
   name: "Leaf & Root",
   tagline: "Bonsai for a Greener Tomorrow",
   legalName: "Leaf & Root Bonsai",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl).replace(/\/$/, ""),
+  url: configuredUrl.replace(/\/$/, ""),
   locale: "en_PH",
   email: "hello@leafandroot.ph",
   phone: "+63-2-8123-4567",

@@ -139,7 +139,7 @@ Copy `.env.example` to `.env.local`. Everything is optional.
 
 | Variable                                                      | Effect when set                                                                                                  |
 | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`                                        | Canonical URLs, sitemap and OpenGraph tags resolve to this origin.                                               |
+| `SITE_URL` (or `NEXT_PUBLIC_SITE_URL`)                        | Canonical URLs, sitemap and OpenGraph tags resolve to this origin. Server-side only, so either name works.       |
 | `RESEND_API_KEY`, `LEAF_AND_ROOT_INBOX`, `LEAF_AND_ROOT_FROM` | Contact, newsletter and order emails are actually delivered. Without them, submissions are validated and logged. |
 | `STRIPE_SECRET_KEY`                                           | Checkout switches from the mock provider to Stripe.                                                              |
 | `STRIPE_WEBHOOK_SECRET`                                       | Enables the webhook endpoint with signature verification.                                                        |
