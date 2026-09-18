@@ -3,10 +3,28 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { LeafGlyph } from "@/components/icons";
+import {
+  applyOutcome,
+  orderCookieName,
+  ORDER_COOKIE_PREFIX,
+  type OrderOutcome,
+} from "@/lib/commerce/order-cookie";
 import type { Order } from "@/lib/commerce/orders";
 import OrderDetail from "./OrderDetail";
 
-export const ORDER_CACHE_PREFIX = "lr.order.";
+export const ORDER_CACHE_PREFIX = ORDER_COOKIE_PREFIX;
+
+/** Reads the outcome the return endpoint left in a cookie. */
+function readOutcome(id: string): OrderOutcome | null {
+  const name = `${orderCookieName(id)}=`;
+  const entry = document.cookie.split("; ").find((part) => part.startsWith(name));
+  if (!entry) return null;
+  try {
+    return JSON.parse(decodeURIComponent(entry.slice(name.length))) as OrderOutcome;
+  } catch {
+    return null;
+  }
+}
 
 /** Writes the receipt the checkout response handed us. */
 export function cacheOrder(order: Order): void {
@@ -35,7 +53,9 @@ export default function OrderFallback({ id }: { id: string }) {
   useEffect(() => {
     try {
       const raw = window.sessionStorage.getItem(`${ORDER_CACHE_PREFIX}${id}`);
-      setOrder(raw ? (JSON.parse(raw) as Order) : null);
+      const cached = raw ? (JSON.parse(raw) as Order) : null;
+      /* The cached copy predates the payment, so fold in how it turned out. */
+      setOrder(cached ? applyOutcome(cached, readOutcome(id)) : null);
     } catch {
       setOrder(null);
     }

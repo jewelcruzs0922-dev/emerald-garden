@@ -87,6 +87,41 @@ test.describe("order receipts", () => {
     await expect(page.locator(".order-side address")).toContainText("Quezon City");
   });
 
+  test("prefer the settled outcome over a receipt cached before payment", async ({
+    page,
+  }) => {
+    /* This is the real sequence: the browser caches the order while it is still
+       pending, then the return endpoint settles it and reports the outcome in a
+       cookie, because it may not be able to reach the same store again. */
+    const pending: Order = {
+      ...CACHED_ORDER,
+      id: "LR-CCCCCC",
+      status: "pending",
+      payment: { provider: "mock", reference: "mock_LR-CCCCCC" },
+    };
+
+    await page.goto("/");
+    await page.evaluate((order) => {
+      window.sessionStorage.setItem(`lr.order.${order.id}`, JSON.stringify(order));
+      const outcome = {
+        status: "paid",
+        reference: "mock_LR-CCCCCC",
+        paidAt: "2026-01-01T09:05:00.000Z",
+      };
+      document.cookie = `lr.order.${order.id}=${encodeURIComponent(
+        JSON.stringify(outcome),
+      )}; path=/`;
+    }, pending);
+
+    await page.goto(`/orders/${pending.id}`);
+    await expect(page.locator("[data-order-status]")).toHaveAttribute(
+      "data-order-status",
+      "paid",
+    );
+    await expect(page.locator(".order-banner h1")).toContainText("confirmed");
+    await expect(page.locator(".order-meta")).toContainText("mock_LR-CCCCCC");
+  });
+
   test("explain themselves when neither the server nor the browser has the order", async ({
     page,
   }) => {
