@@ -34,3 +34,9 @@ yarn-error.log*
 
 # local commerce data (orders + inventory)
 /data
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

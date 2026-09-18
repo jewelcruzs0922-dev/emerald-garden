@@ -18,8 +18,19 @@ npm run dev          # http://localhost:3000
 
 ```bash
 npm run build && npm start   # production
-npm run typecheck            # tsc --noEmit
 ```
+
+| Command                           | What it does                                    |
+| --------------------------------- | ----------------------------------------------- |
+| `npm run typecheck`               | `tsc --noEmit`                                  |
+| `npm run lint`                    | ESLint (flat config)                            |
+| `npm run format` / `format:check` | Prettier                                        |
+| `npm run test:e2e`                | Playwright: 52 tests against a production build |
+
+The Playwright suite runs a real `next build` and drives the result, so orders
+actually settle and stock actually decrements. It needed no browser download —
+`playwright.config.ts` points at the installed Chrome locally and falls back to
+bundled Chromium in CI.
 
 No environment variables are required. Without them the site runs with a mock
 payment provider, logs form submissions to the console, and stores orders as
@@ -184,6 +195,6 @@ This is a portfolio piece, not a production shop.
   single-file change by design.
 - **Placeholder content remains:** the workshop address, phone numbers and
   testimonials are invented, and the social links point at `/contact`.
-- **No automated test suite in the repository** — verification has been done
-  with scripts driving headless Chrome, which are not committed.
+- **No unit or component tests.** Coverage is end-to-end only; the pricing and
+  inventory logic in particular would benefit from fast unit tests.
 - **No accounts, order history, stock notifications or coupon codes.**
