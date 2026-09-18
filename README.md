@@ -4,8 +4,25 @@ A storefront for a small bonsai nursery — a design-led marketing site with a
 working commerce flow behind it. Built with Next.js App Router, React 19 and
 TypeScript, with no UI framework and no runtime dependencies beyond React.
 
+**[Live site](https://leaf-and-root-jet.vercel.app)** ·
+[CI](https://github.com/jewelcruzs0922-dev/leaf-and-root/actions) runs typecheck,
+lint, formatting and 57 end-to-end tests on every push.
+
+![The home page](docs/home.jpg)
+
 The premise: a shop that sells one-off, living things, where the copy is written
 by the growers and every tree is a single specimen rather than a SKU.
+
+## A look around
+
+These are screenshots of the live deployment, not mockups.
+
+| Browsing                                                                                | Buying                                                                    |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| ![The catalogue, with filters and sorting](docs/shop.jpg)                               | ![Checkout, with the order summary](docs/checkout.jpg)                    |
+| <sub><b>Catalogue</b> — filtering, sorting, deferred cards, live stock</sub>            | <sub><b>Checkout</b> — re-priced on the server, shipping by region</sub>  |
+| ![A product detail page](docs/product.jpg)                                              | ![An order confirmation](docs/order.jpg)                                  |
+| <sub><b>Product page</b> — specs, per-species care, related trees, Product schema</sub> | <sub><b>Confirmation</b> — order record, receipt, stock decremented</sub> |
 
 ---
 
@@ -25,7 +42,7 @@ npm run build && npm start   # production
 | `npm run typecheck`               | `tsc --noEmit`                                  |
 | `npm run lint`                    | ESLint (flat config)                            |
 | `npm run format` / `format:check` | Prettier                                        |
-| `npm run test:e2e`                | Playwright: 52 tests against a production build |
+| `npm run test:e2e`                | Playwright: 57 tests against a production build |
 
 The Playwright suite runs a real `next build` and drives the result, so orders
 actually settle and stock actually decrements. It needed no browser download —
