@@ -85,6 +85,12 @@ Next bundles server code per route, so a module-level `Map` would be duplicated
 and the checkout route would never see the order page's reads. (This was a real
 bug, caught by exercising the flow in a production build.)
 
+On a serverless host there is a second problem: the request that renders the
+confirmation may land on an instance that never saw the order. So the checkout
+response also carries the receipt, the browser keeps it in `sessionStorage`, and
+`/orders/[id]` falls back to that copy when the server lookup misses. The server
+remains the source of truth wherever storage is shared.
+
 ### Payments sit behind an interface
 
 `src/lib/commerce/payments/` defines a `PaymentProvider` with two

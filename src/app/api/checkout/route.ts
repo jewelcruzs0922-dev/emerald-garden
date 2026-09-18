@@ -168,6 +168,9 @@ export async function POST(request: Request) {
       orderId: order.id,
       redirectUrl: session.redirectUrl,
       issues: cart.issues,
+      /* The receipt goes back to the browser so the confirmation page still
+         works on a host where each request may hit a different instance. */
+      order: { ...order, payment: { ...order.payment, reference: session.reference } },
     });
   } catch (error) {
     console.error("[leaf-and-root] checkout session failed:", error);

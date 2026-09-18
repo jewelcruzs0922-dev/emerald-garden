@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState, type FormEvent } from "react";
 import { LeafGlyph } from "@/components/icons";
+import { cacheOrder } from "@/components/orders/OrderFallback";
 import { formatPeso } from "@/lib/catalog";
 import {
   priceCart,
@@ -12,6 +13,7 @@ import {
   type PricingIssue,
   type ShippingRegion,
 } from "@/lib/commerce/pricing";
+import type { Order } from "@/lib/commerce/orders";
 import { useStore } from "@/lib/store";
 
 type Errors = Record<string, string>;
@@ -101,6 +103,7 @@ export default function CheckoutClient() {
         errors?: Errors;
         issues?: PricingIssue[];
         redirectUrl?: string;
+        order?: Order;
       } | null;
 
       if (!response.ok || !result?.ok) {
@@ -114,6 +117,10 @@ export default function CheckoutClient() {
       if (result.issues?.length) {
         pushToast("We adjusted an item that had sold out");
       }
+
+      /* Keep our own copy of the receipt: the confirmation page may be served
+         by an instance that never saw this order. */
+      if (result.order) cacheOrder(result.order);
 
       clearCart();
       /* Off to the payment provider. */
