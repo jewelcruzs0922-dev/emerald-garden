@@ -647,12 +647,12 @@ h4, .h4 { font-family: var(--sans); font-weight: 700; font-size: 1rem; letter-sp
   position: absolute; inset: 0; z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(94deg,
-      rgba(247, 241, 229, .975) 0%,
-      rgba(247, 241, 229, .95) 26%,
-      rgba(247, 241, 229, .74) 43%,
-      rgba(247, 241, 229, .26) 58%,
-      rgba(247, 241, 229, 0) 74%),
+    linear-gradient(92deg,
+      rgba(247, 241, 229, .97) 0%,
+      rgba(247, 241, 229, .9) 34%,
+      rgba(247, 241, 229, .55) 50%,
+      rgba(247, 241, 229, .14) 64%,
+      rgba(247, 241, 229, 0) 78%),
     linear-gradient(to top, rgba(74, 52, 28, .16) 0%, rgba(74, 52, 28, 0) 40%);
 }
 .hero__inner {
