@@ -95,7 +95,10 @@ function LandscapeScene() {
         </g>
       </g>
 
-      <path d="M0 174c180-10 320 8 500 2 180-7 320-14 500-4 130 7 300 12 440 4v14H0z" fill="url(#lr-fore)" />
+      <path
+        d="M0 174c180-10 320 8 500 2 180-7 320-14 500-4 130 7 300 12 440 4v14H0z"
+        fill="url(#lr-fore)"
+      />
 
       <g stroke="#3F4E2D" strokeWidth="1.6" strokeLinecap="round" opacity=".8">
         <path d="M120 190v-12M128 190v-9M112 190v-8M620 190v-11M628 190v-8M1340 190v-12M1348 190v-9" />
@@ -143,9 +146,11 @@ export default function Newsletter() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: value }),
       });
-      const data = (await response.json().catch(() => null)) as
-        | { ok?: boolean; message?: string; errors?: Record<string, string> }
-        | null;
+      const data = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        message?: string;
+        errors?: Record<string, string>;
+      } | null;
 
       if (!response.ok || !data?.ok) {
         setStatus("error");
@@ -184,7 +189,12 @@ export default function Newsletter() {
           </p>
 
           <div className="reveal">
-            <form className="newsletter__form" data-newsletter onSubmit={onSubmit} noValidate>
+            <form
+              className="newsletter__form"
+              data-newsletter
+              onSubmit={onSubmit}
+              noValidate
+            >
               <label className="sr-only" htmlFor="news-email">
                 Your email address
               </label>

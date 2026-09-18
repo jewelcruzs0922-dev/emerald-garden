@@ -41,9 +41,7 @@ export async function availableFor(id: string): Promise<number> {
 }
 
 /** Atomically claims stock. Throws `StockError` rather than overselling. */
-export async function reserveStock(
-  lines: { id: string; qty: number }[],
-): Promise<void> {
+export async function reserveStock(lines: { id: string; qty: number }[]): Promise<void> {
   await mutateJson<Sold>(FILE, {}, (sold) => {
     const next = { ...sold };
     for (const line of lines) {
@@ -58,9 +56,7 @@ export async function reserveStock(
 }
 
 /** Returns stock to the pool — used when an order is cancelled or fails. */
-export async function releaseStock(
-  lines: { id: string; qty: number }[],
-): Promise<void> {
+export async function releaseStock(lines: { id: string; qty: number }[]): Promise<void> {
   await mutateJson<Sold>(FILE, {}, (sold) => {
     const next = { ...sold };
     for (const line of lines) {

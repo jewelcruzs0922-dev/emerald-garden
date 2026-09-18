@@ -215,8 +215,24 @@
 .acc-btn .sign::before { left: 0; right: 0; top: 7px; height: 2px; }
 .acc-btn .sign::after { top: 0; bottom: 0; left: 7px; width: 2px; }
 .acc-item.is-open .acc-btn .sign::after { transform: scaleY(0); }
-.acc-panel { overflow: hidden; height: 0; transition: height .4s var(--ease); }
-.acc-panel__inner { padding-bottom: 1.4rem; color: var(--ink-2); font-size: .95rem; max-width: 46rem; }
+/* Animating to `height: auto` normally needs a pixel height measured from a
+   ref during render. Instead: a one-row grid whose track interpolates between
+   0fr and 1fr, with the padding on a child so it collapses with everything
+   else. No measurement, no JavaScript. */
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .4s var(--ease);
+}
+.acc-item.is-open .acc-panel { grid-template-rows: 1fr; }
+.acc-panel__inner { overflow: hidden; min-height: 0; }
+.acc-panel__inner p {
+  padding-bottom: 1.4rem;
+  color: var(--ink-2);
+  font-size: .95rem;
+  line-height: 1.7;
+  max-width: 46rem;
+}
 
 /* --------------------------------------------------------------------------
    Journal page

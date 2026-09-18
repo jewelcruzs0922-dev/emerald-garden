@@ -25,7 +25,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const detail = PRODUCT_DETAILS[id];
   const description = `${product.name} — ${product.note} ${
-    detail ? `${detail.heightCm}cm, ${detail.ageYears} years in training, ${detail.difficulty.toLowerCase()} to keep.` : ""
+    detail
+      ? `${detail.heightCm}cm, ${detail.ageYears} years in training, ${detail.difficulty.toLowerCase()} to keep.`
+      : ""
   }`.trim();
 
   return {
@@ -256,10 +258,10 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="pdp__note reveal">
               <span className="hand">A note from the bench</span>
               <p>
-                We don&apos;t photograph a different tree and send you another one.
-                The picture above is this specimen, taken the week you order. If it
-                isn&apos;t the tree for you when it arrives, send it back within
-                seven days — no explanation needed.
+                We don&apos;t photograph a different tree and send you another one. The
+                picture above is this specimen, taken the week you order. If it isn&apos;t
+                the tree for you when it arrives, send it back within seven days — no
+                explanation needed.
               </p>
             </div>
           </div>

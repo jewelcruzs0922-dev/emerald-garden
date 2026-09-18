@@ -43,11 +43,7 @@ export default function CartDrawer() {
             </p>
             <p className="small">Every tree is looking for a windowsill.</p>
             <p style={{ marginTop: "1.2rem" }}>
-              <Link
-                className="btn btn--ghost btn--sm"
-                href="/shop"
-                onClick={closePanels}
-              >
+              <Link className="btn btn--ghost btn--sm" href="/shop" onClick={closePanels}>
                 Browse the collection
               </Link>
             </p>
@@ -84,9 +80,7 @@ export default function CartDrawer() {
                 </div>
               </div>
               <div>
-                <p className="cart-line__price">
-                  {formatPeso(line.price * line.qty)}
-                </p>
+                <p className="cart-line__price">{formatPeso(line.price * line.qty)}</p>
                 <button
                   type="button"
                   className="cart-line__remove"

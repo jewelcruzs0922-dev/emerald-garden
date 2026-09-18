@@ -134,8 +134,7 @@ export function priceCart(
   const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0);
   const itemCount = lines.reduce((sum, line) => sum + line.qty, 0);
   const freeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
-  const shipping =
-    lines.length === 0 || freeShipping ? 0 : SHIPPING[region].flat;
+  const shipping = lines.length === 0 || freeShipping ? 0 : SHIPPING[region].flat;
 
   return {
     lines,
@@ -149,7 +148,9 @@ export function priceCart(
   };
 }
 
-export function describeShipping(cart: Pick<PricedCart, "freeShipping" | "shippingRegion" | "subtotal">): string {
+export function describeShipping(
+  cart: Pick<PricedCart, "freeShipping" | "shippingRegion" | "subtotal">,
+): string {
   if (cart.freeShipping) return "Free";
   const shortfall = FREE_SHIPPING_THRESHOLD - cart.subtotal;
   return `${formatPeso(SHIPPING[cart.shippingRegion].flat)} · add ${formatPeso(shortfall)} for free shipping`;

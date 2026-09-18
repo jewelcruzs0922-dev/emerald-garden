@@ -8,12 +8,7 @@ interface CtaBandProps {
   secondary: { href: string; label: string };
 }
 
-export default function CtaBand({
-  heading,
-  note,
-  primary,
-  secondary,
-}: CtaBandProps) {
+export default function CtaBand({ heading, note, primary, secondary }: CtaBandProps) {
   return (
     <section className="section cta-band rip rip--top">
       <div className="wrap">

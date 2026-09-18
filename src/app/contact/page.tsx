@@ -36,7 +36,15 @@ const FAQ = [
 export default function ContactPage() {
   return (
     <main id="main">
-      <JsonLd data={[faqSchema(FAQ), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])]} />
+      <JsonLd
+        data={[
+          faqSchema(FAQ),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ]}
+      />
       <PageHead
         crumb="Contact"
         title="Come say hello."
@@ -71,8 +79,8 @@ export default function ContactPage() {
                     <p>
                       <a href="mailto:hello@leafandroot.ph">hello@leafandroot.ph</a>
                       <br />
-                      <a href="mailto:care@leafandroot.ph">care@leafandroot.ph</a> —
-                      for sick trees
+                      <a href="mailto:care@leafandroot.ph">care@leafandroot.ph</a> — for
+                      sick trees
                     </p>
                   </div>
                 </div>
@@ -102,8 +110,7 @@ export default function ContactPage() {
                   <li>
                     <span>Sunday</span>
                     <span>
-                      10:00 – 14:00{" "}
-                      <span className="small muted">(by chance)</span>
+                      10:00 – 14:00 <span className="small muted">(by chance)</span>
                     </span>
                   </li>
                   <li>

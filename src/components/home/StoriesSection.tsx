@@ -41,9 +41,7 @@ export default function StoriesSection() {
       <div className="wrap">
         <div className="stories__inner">
           <div className="stories__intro reveal">
-            <span className="eyebrow eyebrow--script">
-              What Our Customers Say
-            </span>
+            <span className="eyebrow eyebrow--script">What Our Customers Say</span>
             <h2>
               Real People,
               <br />
@@ -51,8 +49,8 @@ export default function StoriesSection() {
               <IconHeart width={16} height={16} />
             </h2>
             <p className="lede">
-              Join a growing community of bonsai lovers who found peace, beauty,
-              and joy in every tree.
+              Join a growing community of bonsai lovers who found peace, beauty, and joy
+              in every tree.
             </p>
             <Link className="btn btn--ghost" href="/contact">
               Read More Reviews <span className="arw">&rarr;</span>

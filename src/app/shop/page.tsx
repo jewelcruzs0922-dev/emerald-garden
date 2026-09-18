@@ -16,7 +16,15 @@ export const metadata: Metadata = pageMetadata({
 export default function ShopPage() {
   return (
     <main id="main">
-      <JsonLd data={[productListSchema(), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Shop", path: "/shop" }])]} />
+      <JsonLd
+        data={[
+          productListSchema(),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Shop", path: "/shop" },
+          ]),
+        ]}
+      />
       <PageHead
         crumb="Shop"
         title="The Collection"
@@ -29,7 +37,12 @@ export default function ShopPage() {
           fill="none"
           aria-hidden="true"
         >
-          <path d="M8 82h134" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+          <path
+            d="M8 82h134"
+            stroke="currentColor"
+            strokeWidth="1.3"
+            strokeLinecap="round"
+          />
           <path
             d="M42 82V46M42 60c-12 0-22-10-22-22 12 0 22 10 22 22zM42 60c12 0 22-10 22-22-12 0-22 10-22 22z"
             stroke="currentColor"

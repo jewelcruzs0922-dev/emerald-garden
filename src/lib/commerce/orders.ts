@@ -2,12 +2,7 @@ import { randomBytes } from "node:crypto";
 import { mutateJson, readJson } from "./json-store";
 import type { PricedLine, ShippingRegion } from "./pricing";
 
-export type OrderStatus =
-  | "pending"
-  | "paid"
-  | "failed"
-  | "cancelled"
-  | "fulfilled";
+export type OrderStatus = "pending" | "paid" | "failed" | "cancelled" | "fulfilled";
 
 export interface OrderCustomer {
   name: string;

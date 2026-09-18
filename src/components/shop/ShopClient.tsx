@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import ProductCard from "@/components/ProductCard";
 import { CATALOG, FILTERS, type FilterKey, type Product } from "@/lib/catalog";
 
@@ -30,8 +30,8 @@ function InsertCard() {
       </svg>
       <h3>Not sure which one?</h3>
       <p>
-        Tell us your light and your routine. We&apos;ll suggest two or three trees
-        that will actually thrive with you.
+        Tell us your light and your routine. We&apos;ll suggest two or three trees that
+        will actually thrive with you.
       </p>
       <p className="hand">— ask us anything, really.</p>
       <Link className="link-arw" href="/contact">
@@ -45,14 +45,6 @@ export default function ShopClient() {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [sort, setSort] = useState<SortKey>("featured");
   const [shown, setShown] = useState(PAGE_SIZE);
-
-  /* Deep links such as /shop#red-pine should reveal a deferred card. */
-  useEffect(() => {
-    const id = window.location.hash.replace("#", "");
-    if (!id) return;
-    const index = CATALOG.findIndex((product) => product.id === id);
-    if (index >= PAGE_SIZE) setShown(index + 1);
-  }, []);
 
   const ordered = useMemo(() => {
     const list = [...CATALOG];
@@ -133,7 +125,9 @@ export default function ShopClient() {
         </div>
       </div>
 
-      <div className="shop-grid" data-shop-grid>{cells}</div>
+      <div className="shop-grid" data-shop-grid>
+        {cells}
+      </div>
 
       {matching.length === 0 ? (
         <div className="shop-empty" data-shop-empty>

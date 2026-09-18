@@ -22,8 +22,7 @@ export default function GlobalError({
           placeItems: "center",
           background: "#F4EFE4",
           color: "#2B2A20",
-          fontFamily:
-            "'Segoe UI', system-ui, -apple-system, sans-serif",
+          fontFamily: "'Segoe UI', system-ui, -apple-system, sans-serif",
           padding: "2rem",
         }}
       >
@@ -32,8 +31,8 @@ export default function GlobalError({
             Leaf &amp; Root couldn&apos;t start up
           </h1>
           <p style={{ lineHeight: 1.7, color: "#4C4A3B", margin: "0 0 1.6rem" }}>
-            Something went wrong before the page could render. Reloading usually
-            sorts it out.
+            Something went wrong before the page could render. Reloading usually sorts it
+            out.
           </p>
           <button
             type="button"

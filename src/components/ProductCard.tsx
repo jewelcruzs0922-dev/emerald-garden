@@ -96,9 +96,7 @@ export default function ProductCard({
               onClick={onAdd}
               disabled={soldOut}
               aria-label={
-                soldOut
-                  ? `${product.name} has sold out`
-                  : `Add ${product.name} to basket`
+                soldOut ? `${product.name} has sold out` : `Add ${product.name} to basket`
               }
             >
               <IconBasket width={17} height={17} />

@@ -1,0 +1,10 @@
+.next
+node_modules
+data
+package-lock.json
+public
+
+# Hand-authored SVG geometry and CSS rules are laid out deliberately for
+# readability; Prettier's reflow makes them harder to scan, not easier.
+src/app/globals.css
+src/app/pages.css

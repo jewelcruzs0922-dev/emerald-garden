@@ -1,6 +1,16 @@
 import { NextResponse } from "next/server";
-import { availableMap, releaseStock, reserveStock, StockError } from "@/lib/commerce/inventory";
-import { newOrderId, orders, type Order, type OrderCustomer } from "@/lib/commerce/orders";
+import {
+  availableMap,
+  releaseStock,
+  reserveStock,
+  StockError,
+} from "@/lib/commerce/inventory";
+import {
+  newOrderId,
+  orders,
+  type Order,
+  type OrderCustomer,
+} from "@/lib/commerce/orders";
 import { paymentProvider } from "@/lib/commerce/payments";
 import {
   isShippingRegion,
@@ -149,10 +159,7 @@ export async function POST(request: Request) {
 
   /* ---- hand off to the payment provider ---- */
   try {
-    const session = await paymentProvider().createSession(
-      order,
-      resolveOrigin(request),
-    );
+    const session = await paymentProvider().createSession(order, resolveOrigin(request));
     await orders().update(order.id, {
       payment: { provider: session.provider, reference: session.reference },
     });

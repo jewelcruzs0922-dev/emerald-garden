@@ -42,8 +42,7 @@ const POSTS = [
     topic: "Care",
     read: "3 min",
     title: "Watering by Feel, Not by Clock",
-    teaser:
-      "Why a schedule will fail you, and what to check with your finger instead.",
+    teaser: "Why a schedule will fail you, and what to check with your finger instead.",
   },
   {
     id: "forest",
@@ -79,7 +78,12 @@ const POSTS = [
 export default function JournalPage() {
   return (
     <main id="main">
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Journal", path: "/journal" }])} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Journal", path: "/journal" },
+        ])}
+      />
       <PageHead
         crumb="Journal"
         title="The Journal"
@@ -108,22 +112,21 @@ export default function JournalPage() {
               </p>
               <h2>Why Bonsai Takes Time — And Why That's Beautiful</h2>
               <p>
-                We rush very little here. A trunk thickens by a millimetre a
-                season. A branch you wire this spring will only begin to look
-                inevitable three years from now, and the tree will keep its own
-                opinion about it the whole time.
+                We rush very little here. A trunk thickens by a millimetre a season. A
+                branch you wire this spring will only begin to look inevitable three years
+                from now, and the tree will keep its own opinion about it the whole time.
               </p>
               <p>
-                People often ask how long it takes to &ldquo;make&rdquo; a
-                bonsai. The honest answer is that you don&apos;t. You keep a tree
-                alive, you make small decisions, and you come back next year to
-                see what it thought of them. Somewhere in that exchange the tree
-                becomes something you couldn&apos;t have drawn.
+                People often ask how long it takes to &ldquo;make&rdquo; a bonsai. The
+                honest answer is that you don&apos;t. You keep a tree alive, you make
+                small decisions, and you come back next year to see what it thought of
+                them. Somewhere in that exchange the tree becomes something you
+                couldn&apos;t have drawn.
               </p>
               <p>
-                That is the whole pleasure, as far as we&apos;re concerned: not
-                the finished silhouette, but the long, quiet middle where nothing
-                much appears to be happening at all.
+                That is the whole pleasure, as far as we&apos;re concerned: not the
+                finished silhouette, but the long, quiet middle where nothing much appears
+                to be happening at all.
               </p>
               <div className="tag-row">
                 <span className="chip">Patience</span>
@@ -152,7 +155,11 @@ export default function JournalPage() {
               <p className="hand" style={{ fontSize: "1.15rem", marginTop: ".6rem" }}>
                 New notes go out with the newsletter, roughly once a month.
               </p>
-              <Link className="link-arw" href="/#newsletter" style={{ marginTop: "1rem" }}>
+              <Link
+                className="link-arw"
+                href="/#newsletter"
+                style={{ marginTop: "1rem" }}
+              >
                 Subscribe <span className="arw">&rarr;</span>
               </Link>
             </aside>
@@ -174,7 +181,12 @@ export default function JournalPage() {
 
           <div className="post-grid">
             {POSTS.map((post) => (
-              <Link className="post reveal" href={`#${post.id}`} id={post.id} key={post.id}>
+              <Link
+                className="post reveal"
+                href={`#${post.id}`}
+                id={post.id}
+                key={post.id}
+              >
                 <div className="photo">
                   <Image
                     src={`/img/${post.img}`}

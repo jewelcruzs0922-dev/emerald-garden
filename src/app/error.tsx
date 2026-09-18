@@ -22,8 +22,8 @@ export default function Error({
           <span className="eyebrow">Something wilted</span>
           <h1 style={{ marginTop: ".6rem" }}>That didn&apos;t go to plan.</h1>
           <p className="lede" style={{ marginInline: "auto", maxWidth: "34rem" }}>
-            An unexpected error stopped this page from loading. Nothing you did
-            caused it, and your basket is still safely saved.
+            An unexpected error stopped this page from loading. Nothing you did caused it,
+            and your basket is still safely saved.
           </p>
 
           <div

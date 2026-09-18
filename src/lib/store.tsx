@@ -79,12 +79,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const toastId = useRef(0);
 
-  /* Hydrate from storage after mount so the server HTML stays deterministic. */
+  /* Hydrate from storage after mount so the server HTML stays deterministic.
+     A lazy useState initialiser would run on the server too, where `window` is
+     undefined, and then disagree with the client — a hydration mismatch. An
+     effect is the correct place for this, despite what the rule assumes. */
+  /* eslint-disable react-hooks/set-state-in-effect -- deliberate post-mount hydration */
   useEffect(() => {
     setCart(readStorage<CartLine[]>(STORAGE.cart, []));
     setWishlist(readStorage<string[]>(STORAGE.wish, []));
     setReady(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   /* Availability is server-owned; the catalogue only knows the starting stock. */
   useEffect(() => {
@@ -168,9 +173,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       setCart((current) => {
         const existing = current.find((line) => line.id === id);
         if (existing) {
-          return current.map((line) =>
-            line.id === id ? { ...line, qty: next } : line,
-          );
+          return current.map((line) => (line.id === id ? { ...line, qty: next } : line));
         }
         return [
           ...current,

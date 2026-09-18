@@ -25,7 +25,12 @@ export function BrandMark({ size = 32, ...props }: IconProps & { size?: number }
         strokeWidth="1.3"
         strokeLinecap="round"
       />
-      <path d="M6.5 29h19" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path
+        d="M6.5 29h19"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }
@@ -286,25 +291,57 @@ export function SocialIcons() {
   return (
     <>
       <a className="social-btn" href="/contact" aria-label="Instagram">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
         </svg>
       </a>
       <a className="social-btn" href="/contact" aria-label="Facebook">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
           <path d="M14.5 8.5H17V5.4h-2.6c-2.2 0-3.6 1.5-3.6 3.7v1.4H9v3.1h1.8V21h3.2v-7.4h2.4l.4-3.1h-2.8V9.6c0-.7.3-1.1 1-1.1z" />
         </svg>
       </a>
       <a className="social-btn" href="/contact" aria-label="Pinterest">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
           <circle cx="12" cy="12" r="9" />
           <path d="M10 20c1-1.6 1.4-3.6 1.9-5.6.4-1.6.8-3 .8-4.1 0-2 1.1-3.2 2.6-3.2 1.3 0 2.1 1 2.1 2.5 0 1.9-1.1 4-2.4 4-.9 0-1.5-.7-1.3-1.6" />
         </svg>
       </a>
       <a className="social-btn" href="/contact" aria-label="YouTube">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          aria-hidden="true"
+        >
           <rect x="2.5" y="5.5" width="19" height="13" rx="4" />
           <path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none" />
         </svg>

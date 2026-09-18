@@ -55,9 +55,11 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, topic, message }),
       });
-      const result = (await response.json().catch(() => null)) as
-        | { ok?: boolean; message?: string; errors?: Errors }
-        | null;
+      const result = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        message?: string;
+        errors?: Errors;
+      } | null;
 
       if (!response.ok || !result?.ok) {
         setErrors(result?.errors ?? {});
@@ -66,9 +68,9 @@ export default function ContactForm() {
           result?.message ?? "Something went wrong at our end. Please try again.",
         );
         const firstBad = form.querySelector<HTMLElement>(".field-error:not(:empty)");
-        const field = firstBad?.closest(".field")?.querySelector<HTMLElement>(
-          "input, textarea, select",
-        );
+        const field = firstBad
+          ?.closest(".field")
+          ?.querySelector<HTMLElement>("input, textarea, select");
         field?.focus();
         return;
       }

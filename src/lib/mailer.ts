@@ -54,9 +54,7 @@ export async function deliver(message: MailMessage): Promise<DeliveryResult> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from:
-          process.env.LEAF_AND_ROOT_FROM ??
-          "Leaf & Root <onboarding@resend.dev>",
+        from: process.env.LEAF_AND_ROOT_FROM ?? "Leaf & Root <onboarding@resend.dev>",
         to: [message.to ?? (process.env.LEAF_AND_ROOT_INBOX as string)],
         subject: message.subject,
         text: message.text,

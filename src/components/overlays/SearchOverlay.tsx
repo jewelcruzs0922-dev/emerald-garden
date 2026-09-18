@@ -118,12 +118,7 @@ export default function SearchOverlay() {
                   key={product.id}
                   onClick={closePanels}
                 >
-                  <Image
-                    src={`/img/${product.img}`}
-                    alt=""
-                    width={84}
-                    height={68}
-                  />
+                  <Image src={`/img/${product.img}`} alt="" width={84} height={68} />
                   <div>
                     <h4>{product.name}</h4>
                     <p>

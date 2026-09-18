@@ -16,7 +16,8 @@ export async function GET(request: Request) {
   const origin = resolveOrigin(request);
   const url = new URL(request.url);
   const orderId = url.searchParams.get("order") ?? "";
-  const session = url.searchParams.get("session") ?? url.searchParams.get("session_id") ?? "";
+  const session =
+    url.searchParams.get("session") ?? url.searchParams.get("session_id") ?? "";
 
   const order = await orders().get(orderId);
   if (!order) {

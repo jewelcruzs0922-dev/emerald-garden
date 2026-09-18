@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BrandMark, IconBasket, IconHeart, IconMenu, IconSearch } from "@/components/icons";
+import {
+  BrandMark,
+  IconBasket,
+  IconHeart,
+  IconMenu,
+  IconSearch,
+} from "@/components/icons";
 import { useStore } from "@/lib/store";
 
 export const NAV_LINKS = [

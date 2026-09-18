@@ -13,13 +13,7 @@ interface PageHeadProps {
   children?: ReactNode;
 }
 
-export default function PageHead({
-  crumb,
-  title,
-  lede,
-  anno,
-  children,
-}: PageHeadProps) {
+export default function PageHead({ crumb, title, lede, anno, children }: PageHeadProps) {
   return (
     <section className="page-head">
       <div className="wrap">

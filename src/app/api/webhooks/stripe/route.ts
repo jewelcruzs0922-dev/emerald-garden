@@ -13,10 +13,16 @@ export const dynamic = "force-dynamic";
  */
 const TOLERANCE_SECONDS = 300;
 
-function verifySignature(rawBody: string, header: string | null, secret: string): boolean {
+function verifySignature(
+  rawBody: string,
+  header: string | null,
+  secret: string,
+): boolean {
   if (!header) return false;
   const parts = Object.fromEntries(
-    header.split(",").map((piece) => piece.split("=").map((s) => s.trim()) as [string, string]),
+    header
+      .split(",")
+      .map((piece) => piece.split("=").map((s) => s.trim()) as [string, string]),
   );
   const timestamp = Number(parts.t);
   if (!Number.isFinite(timestamp)) return false;
@@ -42,7 +48,10 @@ export async function POST(request: Request) {
 
   const rawBody = await request.text();
   if (!verifySignature(rawBody, request.headers.get("stripe-signature"), secret)) {
-    return NextResponse.json({ ok: false, message: "Invalid signature." }, { status: 400 });
+    return NextResponse.json(
+      { ok: false, message: "Invalid signature." },
+      { status: 400 },
+    );
   }
 
   let event: { type?: string; data?: { object?: Record<string, unknown> } };
@@ -56,7 +65,8 @@ export async function POST(request: Request) {
     const session = event.data?.object ?? {};
     const orderId =
       (session.client_reference_id as string | undefined) ??
-      ((session.metadata as Record<string, string> | undefined)?.order_id ?? "");
+      (session.metadata as Record<string, string> | undefined)?.order_id ??
+      "";
 
     const order = orderId ? await orders().get(orderId) : null;
     if (order && order.status !== "paid" && order.status !== "fulfilled") {

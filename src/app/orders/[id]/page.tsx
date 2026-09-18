@@ -73,7 +73,10 @@ export default async function OrderPage({ params, searchParams }: PageProps) {
     <main id="main">
       <section className="section page-head">
         <div className="wrap">
-          <div className={`order-banner order-banner--${status.tone}`} data-order-status={order.status}>
+          <div
+            className={`order-banner order-banner--${status.tone}`}
+            data-order-status={order.status}
+          >
             <span className="eyebrow">{status.eyebrow}</span>
             <h1 style={{ marginTop: ".5rem" }}>
               {justPaid ? "Thank you — your order is confirmed." : status.title}
@@ -124,7 +127,9 @@ export default async function OrderPage({ params, searchParams }: PageProps) {
                 </div>
                 <div className="sum-line">
                   <span>Shipping · {SHIPPING[order.shippingRegion].label}</span>
-                  <span>{order.shipping === 0 ? "Free" : formatPeso(order.shipping)}</span>
+                  <span>
+                    {order.shipping === 0 ? "Free" : formatPeso(order.shipping)}
+                  </span>
                 </div>
                 <div className="sum-line sum-line--total">
                   <span>Total</span>
@@ -137,9 +142,9 @@ export default async function OrderPage({ params, searchParams }: PageProps) {
                 <div>
                   <h3>What happens next</h3>
                   <p>
-                    We water and inspect your tree the day before it travels, then
-                    wrap the pot in damp moss and brace it inside a rigid box. You
-                    will get a message the morning it leaves.
+                    We water and inspect your tree the day before it travels, then wrap
+                    the pot in damp moss and brace it inside a rigid box. You will get a
+                    message the morning it leaves.
                   </p>
                   <p>
                     Questions in the meantime? Reply to your receipt, or{" "}

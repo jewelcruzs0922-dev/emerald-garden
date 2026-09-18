@@ -17,8 +17,8 @@ export default function CollectionSection() {
               Species
             </h2>
             <p>
-              Discover some of our most loved varieties, carefully selected for
-              their beauty, resilience, and unique character.
+              Discover some of our most loved varieties, carefully selected for their
+              beauty, resilience, and unique character.
             </p>
             <Link className="btn" href="/shop">
               View All Collection <span className="arw">&rarr;</span>

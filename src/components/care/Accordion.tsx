@@ -1,58 +1,43 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export interface AccordionItemData {
   q: string;
   a: string;
 }
 
-function Item({
-  item,
-  open,
-  onToggle,
-}: {
-  item: AccordionItemData;
-  open: boolean;
-  onToggle: () => void;
-}) {
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  return (
-    <div className={`acc-item${open ? " is-open" : ""}`}>
-      <button
-        className="acc-btn"
-        type="button"
-        aria-expanded={open}
-        onClick={onToggle}
-      >
-        {item.q}
-        <span className="sign" aria-hidden="true" />
-      </button>
-      <div
-        className="acc-panel"
-        ref={panelRef}
-        style={{ height: open ? (panelRef.current?.scrollHeight ?? "auto") : 0 }}
-      >
-        <div className="acc-panel__inner">{item.a}</div>
-      </div>
-    </div>
-  );
-}
-
+/**
+ * Height is animated with a CSS grid track (`0fr` → `1fr`) rather than a
+ * measured pixel height, so there is no ref to read during render and no
+ * reflow to measure on open.
+ */
 export default function Accordion({ items }: { items: AccordionItemData[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <div className="accordion">
-      {items.map((item, index) => (
-        <Item
-          key={item.q}
-          item={item}
-          open={openIndex === index}
-          onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-        />
-      ))}
+      {items.map((item, index) => {
+        const open = openIndex === index;
+        return (
+          <div className={`acc-item${open ? " is-open" : ""}`} key={item.q}>
+            <button
+              className="acc-btn"
+              type="button"
+              aria-expanded={open}
+              onClick={() => setOpenIndex(open ? null : index)}
+            >
+              {item.q}
+              <span className="sign" aria-hidden="true" />
+            </button>
+            <div className="acc-panel">
+              <div className="acc-panel__inner">
+                <p>{item.a}</p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

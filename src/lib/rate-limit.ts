@@ -16,11 +16,7 @@ export interface RateLimitResult {
   retryAfterSeconds: number;
 }
 
-export function rateLimit(
-  key: string,
-  limit = 5,
-  windowMs = WINDOW_MS,
-): RateLimitResult {
+export function rateLimit(key: string, limit = 5, windowMs = WINDOW_MS): RateLimitResult {
   const now = Date.now();
   const recent = (hits.get(key) ?? []).filter((at) => now - at < windowMs);
   recent.push(now);
@@ -41,8 +37,6 @@ export function rateLimit(
 export function clientKey(request: Request, scope: string): string {
   const forwarded = request.headers.get("x-forwarded-for") ?? "";
   const ip =
-    forwarded.split(",")[0]?.trim() ||
-    request.headers.get("x-real-ip") ||
-    "local";
+    forwarded.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "local";
   return `${scope}:${ip}`;
 }

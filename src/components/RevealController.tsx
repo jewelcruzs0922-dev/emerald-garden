@@ -50,8 +50,7 @@ export default function RevealController() {
       const target = document.getElementById(hash.slice(1));
       if (!target) return;
       event.preventDefault();
-      const top =
-        target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+      const top = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
       window.scrollTo({ top, behavior: "smooth" });
     };
 

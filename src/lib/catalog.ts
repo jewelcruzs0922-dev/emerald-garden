@@ -1,12 +1,7 @@
 export type Environment = "Indoor" | "Outdoor" | "Indoor / Outdoor";
 
 export type FilterKey =
-  | "all"
-  | "indoor"
-  | "outdoor"
-  | "beginner"
-  | "collector"
-  | "under3000";
+  "all" | "indoor" | "outdoor" | "beginner" | "collector" | "under3000";
 
 export interface Product {
   id: string;

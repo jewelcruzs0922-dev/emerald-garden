@@ -74,7 +74,15 @@ function Point({ children }: { children: React.ReactNode }) {
 export default function CarePage() {
   return (
     <main id="main">
-      <JsonLd data={[faqSchema(FAQ), breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Care Guide", path: "/care" }])]} />
+      <JsonLd
+        data={[
+          faqSchema(FAQ),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Care Guide", path: "/care" },
+          ]),
+        ]}
+      />
       <PageHead
         crumb="Care Guide"
         title="The Care Guide"
@@ -94,27 +102,26 @@ export default function CarePage() {
                   <h2>Light &amp; position</h2>
                 </div>
                 <p>
-                  Light is the single biggest factor in whether your tree thrives
-                  or merely survives. A bonsai in good light will use water
-                  faster, grow denser and resist pests. There is no fertiliser
-                  that fixes a dark corner.
+                  Light is the single biggest factor in whether your tree thrives or
+                  merely survives. A bonsai in good light will use water faster, grow
+                  denser and resist pests. There is no fertiliser that fixes a dark
+                  corner.
                 </p>
                 <ul className="care-points">
                   <Point>
-                    <b>Indoor trees</b> want a bright window, ideally east or
-                    west, with 4–6 hours of direct or filtered sun. Rotate the pot
-                    a quarter turn every fortnight so the tree doesn't lean.
+                    <b>Indoor trees</b> want a bright window, ideally east or west, with
+                    4–6 hours of direct or filtered sun. Rotate the pot a quarter turn
+                    every fortnight so the tree doesn't lean.
                   </Point>
                   <Point>
-                    <b>Outdoor trees</b> need real sun and real weather. A
-                    balcony, a sheltered garden bench or a bright windowsill that
-                    opens works well. If the tree came from us as outdoor stock,
-                    it stays outdoors.
+                    <b>Outdoor trees</b> need real sun and real weather. A balcony, a
+                    sheltered garden bench or a bright windowsill that opens works well.
+                    If the tree came from us as outdoor stock, it stays outdoors.
                   </Point>
                   <Point>
-                    <b>Air conditioning</b> dries leaves far faster than people
-                    expect. Keep trees clear of direct vents, and away from
-                    radiators in the cooler months.
+                    <b>Air conditioning</b> dries leaves far faster than people expect.
+                    Keep trees clear of direct vents, and away from radiators in the
+                    cooler months.
                   </Point>
                 </ul>
                 <figure className="care-figure">
@@ -138,29 +145,28 @@ export default function CarePage() {
                   <h2>Watering</h2>
                 </div>
                 <p>
-                  Forget schedules. Water when the tree is thirsty, and check
-                  with your finger before you pour. Two centimetres into the
-                  soil: if it's dry, water until it runs freely from the drainage
-                  holes.
+                  Forget schedules. Water when the tree is thirsty, and check with your
+                  finger before you pour. Two centimetres into the soil: if it's dry,
+                  water until it runs freely from the drainage holes.
                 </p>
                 <div className="care-split">
                   <div>
                     <ul className="care-points">
                       <Point>
-                        <b>Water thoroughly</b>, not little and often. A shallow
-                        splash only wets the surface and encourages weak roots.
+                        <b>Water thoroughly</b>, not little and often. A shallow splash
+                        only wets the surface and encourages weak roots.
                       </Point>
                       <Point>
-                        <b>Morning is kindest.</b> Leaves dry through the day,
-                        which keeps fungal problems away.
+                        <b>Morning is kindest.</b> Leaves dry through the day, which keeps
+                        fungal problems away.
                       </Point>
                       <Point>
-                        <b>Rainwater or rested tap water</b> if you can. If not,
-                        tap water is fine — don't overthink it.
+                        <b>Rainwater or rested tap water</b> if you can. If not, tap water
+                        is fine — don't overthink it.
                       </Point>
                       <Point>
-                        <b>Never let a pot sit in water.</b> Empty the saucer ten
-                        minutes after watering.
+                        <b>Never let a pot sit in water.</b> Empty the saucer ten minutes
+                        after watering.
                       </Point>
                     </ul>
                   </div>
@@ -181,23 +187,23 @@ export default function CarePage() {
                   <h2>Soil &amp; repotting</h2>
                 </div>
                 <p>
-                  Bonsai soil is coarse on purpose: it drains fast and holds air
-                  around the roots. Most of our trees are in a mix of akadama,
-                  pumice and a little lava rock. Repot every two to three years
-                  for young trees, longer for older ones.
+                  Bonsai soil is coarse on purpose: it drains fast and holds air around
+                  the roots. Most of our trees are in a mix of akadama, pumice and a
+                  little lava rock. Repot every two to three years for young trees, longer
+                  for older ones.
                 </p>
                 <ul className="care-points">
                   <Point>
-                    <b>Best window:</b> late winter to early spring, just as buds
-                    begin to swell and before leaves open.
+                    <b>Best window:</b> late winter to early spring, just as buds begin to
+                    swell and before leaves open.
                   </Point>
                   <Point>
-                    <b>Trim the roots,</b> don't just move the tree. Take roughly
-                    a third, keeping the fine feeder roots.
+                    <b>Trim the roots,</b> don't just move the tree. Take roughly a third,
+                    keeping the fine feeder roots.
                   </Point>
                   <Point>
-                    <b>Shade for a week</b> afterwards and hold off fertiliser
-                    for about four weeks while new roots form.
+                    <b>Shade for a week</b> afterwards and hold off fertiliser for about
+                    four weeks while new roots form.
                   </Point>
                 </ul>
                 <figure className="care-figure">
@@ -210,8 +216,8 @@ export default function CarePage() {
                     />
                   </div>
                   <figcaption className="caption">
-                    Surface roots are a feature, not an accident — keep them
-                    clear of soil.
+                    Surface roots are a feature, not an accident — keep them clear of
+                    soil.
                   </figcaption>
                 </figure>
               </article>
@@ -222,22 +228,22 @@ export default function CarePage() {
                   <h2>Feeding</h2>
                 </div>
                 <p>
-                  A tree in a small pot exhausts its soil quickly. We feed
-                  lightly and often through the growing season, and not at all in
-                  the depths of winter or the first month after repotting.
+                  A tree in a small pot exhausts its soil quickly. We feed lightly and
+                  often through the growing season, and not at all in the depths of winter
+                  or the first month after repotting.
                 </p>
                 <ul className="care-points">
                   <Point>
-                    <b>Growing season:</b> a balanced liquid feed every two
-                    weeks, diluted to half strength.
+                    <b>Growing season:</b> a balanced liquid feed every two weeks, diluted
+                    to half strength.
                   </Point>
                   <Point>
-                    <b>Flowering species</b> appreciate a little more potassium
-                    as buds form.
+                    <b>Flowering species</b> appreciate a little more potassium as buds
+                    form.
                   </Point>
                   <Point>
-                    <b>Too much</b> looks like long, pale, floppy growth and
-                    crusty soil. Flush the pot with water and skip a month.
+                    <b>Too much</b> looks like long, pale, floppy growth and crusty soil.
+                    Flush the pot with water and skip a month.
                   </Point>
                 </ul>
               </article>
@@ -248,9 +254,9 @@ export default function CarePage() {
                   <h2>Pruning &amp; wiring</h2>
                 </div>
                 <p>
-                  Shaping is a conversation between you and the tree, and you
-                  only get one vote per season. Work slowly, step back often, and
-                  remove less than you think you should.
+                  Shaping is a conversation between you and the tree, and you only get one
+                  vote per season. Work slowly, step back often, and remove less than you
+                  think you should.
                 </p>
                 <div className="care-split">
                   <figure className="photo">
@@ -263,16 +269,16 @@ export default function CarePage() {
                   </figure>
                   <ul className="care-points" style={{ marginTop: 0 }}>
                     <Point>
-                      <b>Structural pruning</b> in late winter while the tree is
-                      dormant and you can see the shape.
+                      <b>Structural pruning</b> in late winter while the tree is dormant
+                      and you can see the shape.
                     </Point>
                     <Point>
-                      <b>Pinching</b> soft new shoots through summer keeps
-                      foliage pads tight.
+                      <b>Pinching</b> soft new shoots through summer keeps foliage pads
+                      tight.
                     </Point>
                     <Point>
-                      <b>Wiring</b> sets a branch in one to three seasons. Check
-                      monthly; if it bites the bark, remove and reapply next year.
+                      <b>Wiring</b> sets a branch in one to three seasons. Check monthly;
+                      if it bites the bark, remove and reapply next year.
                     </Point>
                   </ul>
                 </div>
@@ -284,14 +290,12 @@ export default function CarePage() {
                   <h2>Season by season</h2>
                 </div>
                 <p>
-                  A rough rhythm for a tropical indoor tree. Outdoor and temperate
-                  species shift a month or two either way.
+                  A rough rhythm for a tropical indoor tree. Outdoor and temperate species
+                  shift a month or two either way.
                 </p>
                 <div style={{ overflowX: "auto", marginTop: "1.8rem" }}>
                   <table className="season-table">
-                    <caption className="sr-only">
-                      Seasonal bonsai care calendar
-                    </caption>
+                    <caption className="sr-only">Seasonal bonsai care calendar</caption>
                     <thead>
                       <tr>
                         <th scope="col">Season</th>
@@ -351,26 +355,23 @@ export default function CarePage() {
                   <h2>Shipping &amp; returns</h2>
                 </div>
                 <p>
-                  Live plants need planning, so we ship Monday to Wednesday only.
-                  That way nothing sits in a depot over a weekend.
+                  Live plants need planning, so we ship Monday to Wednesday only. That way
+                  nothing sits in a depot over a weekend.
                 </p>
                 <ul className="care-points">
                   <Point>
-                    <b>Metro Manila:</b> next-day courier, flat ₱180. Free over
-                    ₱5,000.
+                    <b>Metro Manila:</b> next-day courier, flat ₱180. Free over ₱5,000.
                   </Point>
                   <Point>
-                    <b>Provincial:</b> two to four days, from ₱320 depending on
-                    island.
+                    <b>Provincial:</b> two to four days, from ₱320 depending on island.
                   </Point>
                   <Point>
-                    <b>Live arrival guarantee.</b> If a tree arrives damaged,
-                    send us a photo within 24 hours and we will replace it or
-                    refund you.
+                    <b>Live arrival guarantee.</b> If a tree arrives damaged, send us a
+                    photo within 24 hours and we will replace it or refund you.
                   </Point>
                   <Point>
-                    <b>Change of heart:</b> unopened, healthy trees can come back
-                    within seven days, minus shipping.
+                    <b>Change of heart:</b> unopened, healthy trees can come back within
+                    seven days, minus shipping.
                   </Point>
                 </ul>
               </article>

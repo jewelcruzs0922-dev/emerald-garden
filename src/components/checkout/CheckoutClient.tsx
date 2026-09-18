@@ -64,7 +64,14 @@ export default function CheckoutClient() {
 
     /* Cheap client-side check so obvious mistakes never need a round trip. */
     const local: Errors = {};
-    for (const field of ["name", "email", "phone", "address", "city", "postalCode"] as const) {
+    for (const field of [
+      "name",
+      "email",
+      "phone",
+      "address",
+      "city",
+      "postalCode",
+    ] as const) {
       if (!payload[field]) local[field] = "This is needed for delivery.";
     }
     if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
@@ -88,15 +95,13 @@ export default function CheckoutClient() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const result = (await response.json().catch(() => null)) as
-        | {
-            ok?: boolean;
-            message?: string;
-            errors?: Errors;
-            issues?: PricingIssue[];
-            redirectUrl?: string;
-          }
-        | null;
+      const result = (await response.json().catch(() => null)) as {
+        ok?: boolean;
+        message?: string;
+        errors?: Errors;
+        issues?: PricingIssue[];
+        redirectUrl?: string;
+      } | null;
 
       if (!response.ok || !result?.ok) {
         setErrors(result?.errors ?? {});
@@ -209,8 +214,8 @@ export default function CheckoutClient() {
         </button>
 
         <p className="form-note">
-          You&apos;ll be taken to a secure payment page. Nothing is charged until
-          you confirm there.
+          You&apos;ll be taken to a secure payment page. Nothing is charged until you
+          confirm there.
         </p>
 
         <p
@@ -273,14 +278,12 @@ export default function CheckoutClient() {
             Spend {formatPeso(5000 - priced.subtotal)} more for free shipping.
           </p>
         ) : (
-          <p className="summary__note summary__note--good">
-            Free shipping unlocked.
-          </p>
+          <p className="summary__note summary__note--good">Free shipping unlocked.</p>
         )}
 
         <p className="summary__promise">
-          Every tree travels with a care card, wrapped in a rigid box with damp
-          moss around the roots.
+          Every tree travels with a care card, wrapped in a rigid box with damp moss
+          around the roots.
         </p>
       </aside>
     </div>

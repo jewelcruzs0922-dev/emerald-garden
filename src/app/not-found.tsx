@@ -22,8 +22,8 @@ export default function NotFound() {
           <span className="eyebrow">Error 404</span>
           <h1 style={{ marginTop: ".6rem" }}>This branch doesn&apos;t exist.</h1>
           <p className="lede" style={{ marginInline: "auto", maxWidth: "34rem" }}>
-            The page you were looking for has been repotted, renamed, or never
-            grew here in the first place.
+            The page you were looking for has been repotted, renamed, or never grew here
+            in the first place.
           </p>
 
           <LeafGlyph

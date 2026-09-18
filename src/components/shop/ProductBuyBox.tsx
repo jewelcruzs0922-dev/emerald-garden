@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { IconBasket, IconCheck, IconHeart } from "@/components/icons";
-import {
-  FREE_SHIPPING_THRESHOLD,
-  formatPeso,
-  type Product,
-} from "@/lib/catalog";
+import { FREE_SHIPPING_THRESHOLD, formatPeso, type Product } from "@/lib/catalog";
 import { useStore } from "@/lib/store";
 
 export default function ProductBuyBox({ product }: { product: Product }) {
   const { addToCart, toggleWish, isWished, ready, stockFor } = useStore();
-  const [qty, setQty] = useState(1);
+  const [requested, setRequested] = useState(1);
   const [justAdded, setJustAdded] = useState(false);
   const timer = useRef<number | undefined>(undefined);
 
@@ -23,10 +19,9 @@ export default function ProductBuyBox({ product }: { product: Product }) {
   const max = Math.max(1, stock);
   const saved = ready && isWished(product.id);
 
-  /* Keep the stepper honest if availability drops while the page is open. */
-  useEffect(() => {
-    setQty((current) => Math.min(Math.max(1, current), max));
-  }, [max]);
+  /* Clamped on read rather than synced by an effect, so availability dropping
+     mid-session can't leave the stepper pointing at stock that isn't there. */
+  const qty = Math.min(Math.max(1, requested), max);
 
   const onAdd = () => {
     addToCart(product.id, qty);
@@ -59,7 +54,7 @@ export default function ProductBuyBox({ product }: { product: Product }) {
         <div className="buy__qty" aria-label="Quantity">
           <button
             type="button"
-            onClick={() => setQty((value) => Math.max(1, value - 1))}
+            onClick={() => setRequested((value) => Math.max(1, value - 1))}
             disabled={soldOut || qty <= 1}
             aria-label="Decrease quantity"
           >
@@ -70,7 +65,7 @@ export default function ProductBuyBox({ product }: { product: Product }) {
           </span>
           <button
             type="button"
-            onClick={() => setQty((value) => Math.min(max, value + 1))}
+            onClick={() => setRequested((value) => Math.min(max, value + 1))}
             disabled={soldOut || qty >= max}
             aria-label="Increase quantity"
           >
@@ -113,9 +108,7 @@ export default function ProductBuyBox({ product }: { product: Product }) {
       <ul className="buy__assurances">
         <li>
           {shortfall > 0 && !soldOut ? (
-            <>
-              Add {formatPeso(shortfall)} more for free shipping.
-            </>
+            <>Add {formatPeso(shortfall)} more for free shipping.</>
           ) : (
             <>Free shipping on this order.</>
           )}

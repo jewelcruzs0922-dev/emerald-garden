@@ -25,9 +25,21 @@ const fraunces = localFont({
 
 const nunitoSans = localFont({
   src: [
-    { path: "./fonts/nunito-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
-    { path: "./fonts/nunito-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
-    { path: "./fonts/nunito-sans-latin-700-normal.woff2", weight: "700", style: "normal" },
+    {
+      path: "./fonts/nunito-sans-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nunito-sans-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nunito-sans-latin-700-normal.woff2",
+      weight: "700",
+      style: "normal",
+    },
   ],
   variable: "--font-nunito-sans",
   display: "swap",

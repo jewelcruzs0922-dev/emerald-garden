@@ -35,7 +35,8 @@ export const PRODUCT_DETAILS: Record<string, ProductDetails> = {
       "The black pine is the tree most people picture when they hear the word bonsai, and it earns that reputation slowly. Ours has been in training for twelve years — long enough for the bark to crack into plates and for the trunk to keep a lean nobody planned. It is a tree for someone who enjoys the doing more than the having.",
     care: {
       light: "Full sun all year. It will not thicken without it.",
-      water: "Freely through the growing season, sparingly in winter when the soil stays cold.",
+      water:
+        "Freely through the growing season, sparingly in winter when the soil stays cold.",
       feed: "Low-nitrogen feed from early spring to late autumn; nothing in the depths of winter.",
       repot: "Every three to five years, in late winter before the candles extend.",
     },
@@ -51,7 +52,8 @@ export const PRODUCT_DETAILS: Record<string, ProductDetails> = {
       "A maple is worth keeping for three weeks a year and pleasant company for the other forty-nine. This one has fine, well-spaced branching and a trunk that already shows the faint striping that old maples get. In a good autumn it goes the colour of a struck match.",
     care: {
       light: "Morning sun, sheltered from the harshest midday glare in summer.",
-      water: "Daily while in leaf. It will scorch at the edges if it dries out even once.",
+      water:
+        "Daily while in leaf. It will scorch at the edges if it dries out even once.",
       feed: "Balanced feed in spring, then low-nitrogen from late summer to harden the wood.",
       repot: "Every two years in early spring, just as the buds begin to swell.",
     },
@@ -83,7 +85,8 @@ export const PRODUCT_DETAILS: Record<string, ProductDetails> = {
       "A cascade — the trunk falls below the rim of the pot and keeps going, the way a juniper will when it grows out of a cliff face. It wants sun, weather and a cold winter, so it belongs outdoors. In exchange it will outlive most of us.",
     care: {
       light: "Full sun, all year, with the full range of seasons.",
-      water: "When the soil surface dries; more freely in summer, barely at all in winter.",
+      water:
+        "When the soil surface dries; more freely in summer, barely at all in winter.",
       feed: "Once a month from spring to early autumn.",
       repot: "Every two to three years in early spring, in a free-draining mix.",
     },

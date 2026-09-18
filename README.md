@@ -29,13 +29,13 @@ JSON on disk. See [Configuration](#configuration) to switch anything on.
 
 ## What is here
 
-| Area | Routes |
-| --- | --- |
-| Marketing | `/`, `/about`, `/care`, `/journal`, `/contact` |
-| Catalogue | `/shop`, `/shop/[id]` (10 product pages) |
-| Commerce | `/checkout`, `/orders/[id]` |
-| API | `/api/checkout`, `/api/checkout/return`, `/api/inventory`, `/api/contact`, `/api/newsletter`, `/api/webhooks/stripe` |
-| SEO | `/sitemap.xml` (16 URLs), `/robots.txt`, `/og.png` |
+| Area      | Routes                                                                                                               |
+| --------- | -------------------------------------------------------------------------------------------------------------------- |
+| Marketing | `/`, `/about`, `/care`, `/journal`, `/contact`                                                                       |
+| Catalogue | `/shop`, `/shop/[id]` (10 product pages)                                                                             |
+| Commerce  | `/checkout`, `/orders/[id]`                                                                                          |
+| API       | `/api/checkout`, `/api/checkout/return`, `/api/inventory`, `/api/contact`, `/api/newsletter`, `/api/webhooks/stripe` |
+| SEO       | `/sitemap.xml` (16 URLs), `/robots.txt`, `/og.png`                                                                   |
 
 **Working end to end:** browse → product page → basket → checkout → payment →
 order confirmation, with server-side pricing, atomic stock reservation and an
@@ -120,13 +120,13 @@ text node in the browser and computing its effective background.
 
 Copy `.env.example` to `.env.local`. Everything is optional.
 
-| Variable | Effect when set |
-| --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap and OpenGraph tags resolve to this origin. |
+| Variable                                                      | Effect when set                                                                                                  |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`                                        | Canonical URLs, sitemap and OpenGraph tags resolve to this origin.                                               |
 | `RESEND_API_KEY`, `LEAF_AND_ROOT_INBOX`, `LEAF_AND_ROOT_FROM` | Contact, newsletter and order emails are actually delivered. Without them, submissions are validated and logged. |
-| `STRIPE_SECRET_KEY` | Checkout switches from the mock provider to Stripe. |
-| `STRIPE_WEBHOOK_SECRET` | Enables the webhook endpoint with signature verification. |
-| `LEAF_AND_ROOT_STORAGE=memory` | Forces in-memory storage. Detected automatically on a read-only filesystem. |
+| `STRIPE_SECRET_KEY`                                           | Checkout switches from the mock provider to Stripe.                                                              |
+| `STRIPE_WEBHOOK_SECRET`                                       | Enables the webhook endpoint with signature verification.                                                        |
+| `LEAF_AND_ROOT_STORAGE=memory`                                | Forces in-memory storage. Detected automatically on a read-only filesystem.                                      |
 
 ---
 

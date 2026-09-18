@@ -18,7 +18,17 @@ const VALUES = [
     title: "Patience over speed",
     copy: "A tree that is rushed will show it in a year. We would rather sell you nothing this month than a tree that isn't ready.",
     icon: (
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="34"
+        height="34"
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <path d="M20 34s-11-6.6-11-14.6A6.2 6.2 0 0 1 20 15a6.2 6.2 0 0 1 11 4.4C31 27.4 20 34 20 34z" />
         <path d="M20 12V5M13 8l-3-4M27 8l3-4" />
       </svg>
@@ -28,7 +38,17 @@ const VALUES = [
     title: "Suited to your life",
     copy: "We ask about your window before we talk about species. The right tree is the one that fits the room you actually have.",
     icon: (
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="34"
+        height="34"
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <path d="M20 33V17" />
         <path d="M20 22c-7 0-13-6-13-13 7 0 13 6 13 13zM20 22c7 0 13-6 13-13-7 0-13 6-13 13z" />
         <path d="M12 33h16" />
@@ -39,7 +59,17 @@ const VALUES = [
     title: "Nothing leaves unhappy",
     copy: "Each tree is packed in a rigid box with damp moss around the roots, and we follow up two weeks later.",
     icon: (
-      <svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <svg
+        width="34"
+        height="34"
+        viewBox="0 0 40 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
         <path d="M8 12h24l-2 20a2 2 0 0 1-2 1.8H12A2 2 0 0 1 10 32L8 12z" />
         <path d="M14 12V9a6 6 0 0 1 12 0v3" />
         <path d="M15 22c1.6 2.6 3.3 3.9 5 3.9s3.4-1.3 5-3.9" />
@@ -108,7 +138,12 @@ const BENCH = [
 export default function AboutPage() {
   return (
     <main id="main">
-      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHead
         crumb="About"
         title={
@@ -137,22 +172,21 @@ export default function AboutPage() {
               <span className="eyebrow">Our Story</span>
               <h2>More Than Plants, It's a Lifestyle.</h2>
               <p>
-                Leaf &amp; Root was born from a simple belief — that nature brings
-                peace, balance, and beauty into our everyday lives. We grow and
-                care for bonsai trees for hobbyists, collectors, and anyone who
-                wants to bring a little more green into their space.
+                Leaf &amp; Root was born from a simple belief — that nature brings peace,
+                balance, and beauty into our everyday lives. We grow and care for bonsai
+                trees for hobbyists, collectors, and anyone who wants to bring a little
+                more green into their space.
               </p>
               <p>
-                It started on a single bench behind the house: two ficus, a
-                juniper that refused to behave, and a notebook of watering
-                times. Friends asked for cuttings. Then neighbours asked for
-                trees. Then strangers started writing to ask which one would
-                survive a north-facing apartment.
+                It started on a single bench behind the house: two ficus, a juniper that
+                refused to behave, and a notebook of watering times. Friends asked for
+                cuttings. Then neighbours asked for trees. Then strangers started writing
+                to ask which one would survive a north-facing apartment.
               </p>
               <p>
-                We still answer those letters ourselves. Every tree is grown
-                here, wired here and photographed on the same battered table
-                you'll see in half of our pictures.
+                We still answer those letters ourselves. Every tree is grown here, wired
+                here and photographed on the same battered table you'll see in half of our
+                pictures.
               </p>
               <p className="story-lead__sign">— Marisol &amp; Ben, growers</p>
             </div>
@@ -202,16 +236,13 @@ export default function AboutPage() {
         <div className="wrap">
           <div className="quote-block reveal">
             <blockquote>
-              We are not selling a plant. We are handing someone twenty quiet
-              minutes a week, for years.
+              We are not selling a plant. We are handing someone twenty quiet minutes a
+              week, for years.
             </blockquote>
             <cite>Marisol Reyes · co-founder &amp; head grower</cite>
           </div>
 
-          <div
-            className="values"
-            style={{ marginTop: "clamp(2.5rem,5vw,4rem)" }}
-          >
+          <div className="values" style={{ marginTop: "clamp(2.5rem,5vw,4rem)" }}>
             {BENCH.map((entry) => (
               <figure className="grower reveal" key={entry.title}>
                 <div className="photo">

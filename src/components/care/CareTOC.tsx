@@ -53,8 +53,7 @@ export default function CareTOC() {
       </ul>
       <div className="care-toc__card">
         <p className="hand">
-          &ldquo;Most bonsai die of kindness — too much water, too little
-          light.&rdquo;
+          &ldquo;Most bonsai die of kindness — too much water, too little light.&rdquo;
         </p>
       </div>
     </aside>
