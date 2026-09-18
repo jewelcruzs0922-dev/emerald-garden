@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandMark, LeafGlyph, SocialIcons } from "@/components/icons";
+import { BrandMark, LeafGlyph } from "@/components/icons";
 
 const FOOTER_LINKS = [
   { href: "/", label: "Home" },
@@ -36,10 +36,6 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
-
-          <div className="socials footer__social">
-            <SocialIcons />
-          </div>
         </div>
 
         <div className="footer__bottom">

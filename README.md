@@ -217,7 +217,8 @@ This is a portfolio piece, not a production shop.
   database, or `OrderRepository` for the Shopify Storefront API, is a
   single-file change by design.
 - **Placeholder content remains:** the workshop address, phone numbers and
-  testimonials are invented, and the social links point at `/contact`.
+  testimonials are invented. There are deliberately no social links, rather
+  than four that go nowhere.
 - **No unit or component tests.** Coverage is end-to-end only; the pricing and
   inventory logic in particular would benefit from fast unit tests.
 - **No accounts, order history, stock notifications or coupon codes.**

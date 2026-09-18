@@ -578,15 +578,6 @@ h4, .h4 { font-family: var(--sans); font-weight: 700; font-size: 1rem; letter-sp
 .mobile-nav__extra { margin-top: 2rem; display: grid; gap: 1rem; }
 .mobile-nav__row { display: flex; gap: .75rem; flex-wrap: wrap; }
 
-.socials { display: flex; gap: .5rem; }
-.social-btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 40px; height: 40px; border-radius: 50%;
-  border: 1px solid var(--line);
-  color: var(--ink-2);
-  transition: all .28s var(--ease);
-}
-.social-btn:hover { background: var(--forest); border-color: var(--forest); color: var(--cream); transform: translateY(-2px); }
 /* --------------------------------------------------------------------------
    11. Header refinements — brand left, nav centred, actions right
    -------------------------------------------------------------------------- */
@@ -1119,7 +1110,7 @@ h4, .h4 { font-family: var(--sans); font-weight: 700; font-size: 1rem; letter-sp
 .site-footer a:hover { color: #fff; }
 .footer__row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 1.4rem;
 }
@@ -1128,9 +1119,6 @@ h4, .h4 { font-family: var(--sans); font-weight: 700; font-size: 1rem; letter-sp
 .footer__brand .brand__tag { color: rgba(251, 248, 240, .6); }
 .footer__nav ul { display: flex; gap: clamp(1rem, 2.2vw, 2rem); flex-wrap: wrap; justify-content: center; }
 .footer__nav a { font-size: .9rem; color: rgba(251, 248, 240, .82); }
-.footer__social { justify-self: end; }
-.site-footer .social-btn { border-color: var(--line-light); color: rgba(251, 248, 240, .85); }
-.site-footer .social-btn:hover { background: var(--sage); border-color: var(--sage); color: var(--forest-2); }
 .footer__bottom {
   display: flex;
   align-items: center;
@@ -1198,7 +1186,6 @@ h4, .h4 { font-family: var(--sans); font-weight: 700; font-size: 1rem; letter-sp
   .newsletter__sub { grid-column: 1 / -1; order: 3; max-width: 34rem; }
 
   .footer__row { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 1.6rem; }
-  .footer__social { justify-self: center; }
 }
 
 /* --------------------------------------------------------------------------

@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import { breadcrumbSchema, faqSchema } from "@/lib/structured-data";
 import Accordion from "@/components/care/Accordion";
 import ContactForm from "@/components/contact/ContactForm";
-import { IconMail, IconPhone, IconPin, SocialIcons } from "@/components/icons";
+import { IconMail, IconPhone, IconPin } from "@/components/icons";
 import JsonLd from "@/components/JsonLd";
 import PageHead from "@/components/PageHead";
 
@@ -210,10 +210,6 @@ export default function ContactPage() {
                   Ring the bell by the green gate. Parking is on the street.
                 </figcaption>
               </figure>
-
-              <div className="socials" style={{ marginTop: "1.6rem" }}>
-                <SocialIcons />
-              </div>
             </div>
           </div>
         </div>
