@@ -31,7 +31,7 @@ function NoteHeart(props: SVGProps<SVGSVGElement>) {
 export default function Hero() {
   return (
     <section className="hero">
-        <div className="hero__bg">
+      <div className="hero__bg">
         <Image
           src="/img/emerald-hero-media.png"
           alt="Emerald Garden bonsai showcase"

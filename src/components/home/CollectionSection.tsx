@@ -36,7 +36,6 @@ export default function CollectionSection() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

@@ -35,8 +35,7 @@ export default function ContactForm() {
     /* Validate locally first so the common case never needs a round trip. */
     const local: Errors = {};
     if (!name) local.name = "We would like to know who we are writing back to.";
-    if (!isEmail(email))
-      local.email = "That email does not look quite right.";
+    if (!isEmail(email)) local.email = "That email does not look quite right.";
     if (message.length < 10)
       local.message = "Tell us a little more — even one sentence helps.";
 

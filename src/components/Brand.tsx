@@ -13,11 +13,7 @@ interface BrandProps {
   onClick?: LinkProps["onClick"];
 }
 
-export default function Brand({
-  linked = true,
-  linkProps,
-  onClick,
-}: BrandProps) {
+export default function Brand({ linked = true, linkProps, onClick }: BrandProps) {
   const inner = (
     <>
       <span className="brand__mark">

@@ -119,7 +119,14 @@ export default function SearchOverlay() {
                   key={product.id}
                   onClick={closePanels}
                 >
-                  <Image src={`/img/${product.img}`} alt={`${product.name} bonsai`} width={84} height={68} placeholder="blur" blurDataURL={BLUR_PLACEHOLDER} />
+                  <Image
+                    src={`/img/${product.img}`}
+                    alt={`${product.name} bonsai`}
+                    width={84}
+                    height={68}
+                    placeholder="blur"
+                    blurDataURL={BLUR_PLACEHOLDER}
+                  />
                   <div>
                     <h4>{product.name}</h4>
                     <p>

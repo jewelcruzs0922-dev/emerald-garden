@@ -77,7 +77,10 @@ export function productListSchema(): Record<string, unknown> {
           "@type": "Offer",
           price: product.price,
           priceCurrency: "PHP",
-          availability: product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+          availability:
+            product.stock > 0
+              ? "https://schema.org/InStock"
+              : "https://schema.org/OutOfStock",
           url: `${SITE.url}/shop/${product.id}`,
           priceValidUntil: `${new Date().getFullYear() + 1}-12-31`,
         },
