@@ -153,6 +153,13 @@ navigation, `aria-expanded` on the accordion, `aria-invalid` on invalid fields,
 and full `prefers-reduced-motion` support. Contrast was audited by walking every
 text node in the browser and computing its effective background.
 
+### Loading states and image placeholders
+
+Route-level `loading.tsx` skeletons provide instant visual feedback during
+navigation instead of a blank flash. Product and cart images use tiny 1×1
+`blurDataURL` placeholders so they fade in from a warm tone rather than
+blocking layout.
+
 ---
 
 ## Configuration
@@ -184,6 +191,7 @@ src/
     shop/               catalogue grid, product buy box
     checkout/           checkout form and summary
     overlays/           cart, wishlist, search, mobile nav, toasts
+    Brand.tsx           shared brand mark + wordmark (Header, Footer, MobileNav)
     icons.tsx           every icon and decorative mark, hand-authored SVG
   lib/
     catalog.ts          commercial facts: price, stock, imagery
@@ -192,6 +200,8 @@ src/
     store.tsx           cart, wishlist, panels, availability, toasts
     seo.ts              site constants, per-page metadata helper
     structured-data.ts  schema.org builders
+    useJustAdded.ts     shared "added to cart" feedback hook
+    image-utils.ts      blurDataURL placeholder for images
 tests/
   pricing.test.ts       server-side re-pricing, shipping and cart issues
   inventory.test.ts     stock reservation, oversell protection, atomicity
@@ -208,8 +218,9 @@ facts a shop back-end would replace, the other the copy a grower writes.
 - **Typefaces** — Fraunces, Nunito Sans, Caveat and Caveat Brush, self-hosted as
   woff2 and loaded through `next/font/local`. Only the weights the stylesheet
   uses are declared, since every declared file is preloaded.
-- **Photography** — sourced from Wikimedia Commons and downsized. Attribution
-  per image is in [`credits.txt`](./credits.txt).
+- **Photography** — product images and editorial photography are hand-processed
+  PNGs derived from source photography. Attribution per image is in
+  [`credits.txt`](./credits.txt).
 - **Illustration** — the field sketch, notebook, landscape panorama, botanical
   marks and icon set are all hand-authored SVG in this repository.
 
