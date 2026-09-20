@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import { IconBasket, IconHeart } from "@/components/icons";
 import { formatPeso, type Product } from "@/lib/catalog";
 import { useStore } from "@/lib/store";
+import { useJustAdded } from "@/lib/useJustAdded";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 
 interface ProductCardProps {
   product: Product;
@@ -21,10 +22,7 @@ export default function ProductCard({
   className = "",
 }: ProductCardProps) {
   const { addToCart, toggleWish, isWished, ready, stockFor } = useStore();
-  const [justAdded, setJustAdded] = useState(false);
-  const timer = useRef<number | undefined>(undefined);
-
-  useEffect(() => () => window.clearTimeout(timer.current), []);
+  const { justAdded, markAdded } = useJustAdded({ duration: 1400 });
 
   /* Catalogue stock until the live figure arrives, so the first paint is sane. */
   const stock = ready ? stockFor(product.id) : product.stock;
@@ -33,9 +31,7 @@ export default function ProductCard({
   const onAdd = () => {
     addToCart(product.id);
     if (soldOut) return;
-    setJustAdded(true);
-    window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => setJustAdded(false), 1400);
+    markAdded();
   };
 
   return (
@@ -61,6 +57,8 @@ export default function ProductCard({
             alt={`${product.name} bonsai`}
             fill
             sizes="(max-width: 400px) 92vw, (max-width: 720px) 46vw, (max-width: 1080px) 44vw, 260px"
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
           />
           {soldOut ? <span className="product__sold">Sold out</span> : null}
         </div>

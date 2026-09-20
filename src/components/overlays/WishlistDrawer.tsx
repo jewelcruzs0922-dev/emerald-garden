@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { IconClose, IconHeart } from "@/components/icons";
 import { CATALOG_BY_ID, formatPeso } from "@/lib/catalog";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 import { useStore } from "@/lib/store";
 
 export default function WishlistDrawer() {
@@ -48,9 +49,11 @@ export default function WishlistDrawer() {
               <Image
                 className="cart-line__img"
                 src={`/img/${product.img}`}
-                alt=""
+                alt={`${product.name} bonsai`}
                 width={68}
                 height={68}
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
               />
               <div>
                 <p className="cart-line__name">{product.name}</p>

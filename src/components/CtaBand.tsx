@@ -10,7 +10,7 @@ interface CtaBandProps {
 
 export default function CtaBand({ heading, note, primary, secondary }: CtaBandProps) {
   return (
-    <section className="section cta-band rip rip--top">
+    <section className="section cta-band">
       <div className="wrap">
         <div className="cta-band__inner">
           <div className="reveal">

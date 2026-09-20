@@ -4,22 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
-  BrandMark,
   IconBasket,
   IconHeart,
   IconMenu,
   IconSearch,
 } from "@/components/icons";
+import Brand from "@/components/Brand";
 import { useStore } from "@/lib/store";
-
-export const NAV_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/shop", label: "Shop" },
-  { href: "/about", label: "About" },
-  { href: "/care", label: "Care Guide" },
-  { href: "/journal", label: "Journal" },
-  { href: "/contact", label: "Contact" },
-];
+import { NAV_LINKS } from "@/lib/seo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -39,15 +31,7 @@ export default function Header() {
   return (
     <header className={`site-header${stuck ? " is-stuck" : ""}`}>
       <div className="wrap header-inner">
-        <Link className="brand" href="/" aria-label="Emerald Garden — home">
-          <span className="brand__mark">
-            <BrandMark />
-          </span>
-          <span className="brand__text">
-            <span className="brand__name">Emerald Garden</span>
-            <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
-          </span>
-        </Link>
+        <Brand />
 
         <nav className="main-nav" aria-label="Primary">
           <ul>
@@ -55,9 +39,6 @@ export default function Header() {
               <Link href="/" aria-current={pathname === "/" ? "page" : undefined}>
                 Home
               </Link>
-            </li>
-            <li aria-hidden="true">
-              <span className="nav-script">Built with Love</span>
             </li>
             {NAV_LINKS.slice(1).map((link) => (
               <li key={link.href}>

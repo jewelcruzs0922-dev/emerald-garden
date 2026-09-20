@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { IconLeafTiny } from "@/components/icons";
+import { isEmail } from "@/lib/validation";
 
 const TOPICS = [
   "A tree I already own",
@@ -34,7 +35,7 @@ export default function ContactForm() {
     /* Validate locally first so the common case never needs a round trip. */
     const local: Errors = {};
     if (!name) local.name = "We would like to know who we are writing back to.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))
+    if (!isEmail(email))
       local.email = "That email does not look quite right.";
     if (message.length < 10)
       local.message = "Tell us a little more — even one sentence helps.";

@@ -300,8 +300,8 @@ a.post:hover h3 { color: var(--forest-2); }
 .info-list { display: grid; gap: 1.4rem; }
 .info-item { display: grid; grid-template-columns: 34px 1fr; gap: 1rem; }
 .info-item svg { color: var(--olive); margin-top: .25rem; }
-.info-item h4 { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
-.info-item p { font-size: .95rem; color: var(--ink-2); margin-top: .25rem; }
+.info-item h4 { font-size: .9rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+.info-item p { font-size: 1.1rem; color: var(--ink-2); margin-top: .25rem; }
 .info-item a { border-bottom: 1px solid var(--line-3); }
 .info-item a:hover { color: var(--forest-2); border-color: var(--forest-2); }
 .map-illu { margin-top: 1.8rem; background: var(--paper-2); border: 1px solid var(--line-2); padding: 1rem; }
@@ -309,7 +309,7 @@ a.post:hover h3 { color: var(--forest-2); }
 .map-illu figcaption { margin-top: .6rem; }
 
 .hours { border-top: 1px solid var(--line); margin-top: 1.6rem; }
-.hours li { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--line-2); font-size: .9rem; }
+.hours li { display: flex; justify-content: space-between; gap: 1rem; padding: .6rem 0; border-bottom: 1px solid var(--line-2); font-size: 1.05rem; }
 .hours .closed { color: var(--terra-2); }
 
 /* --------------------------------------------------------------------------

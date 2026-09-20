@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LeafGlyph } from "@/components/icons";
 import { formatPeso } from "@/lib/catalog";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 import type { Order } from "@/lib/commerce/orders";
 import { SHIPPING } from "@/lib/commerce/pricing";
 
@@ -88,10 +89,12 @@ export default function OrderDetail({
                   <li key={line.id}>
                     <Image
                       src={`/img/${line.img}`}
-                      alt=""
+                      alt={`${line.name} bonsai`}
                       width={72}
                       height={72}
                       className="summary__img"
+                      placeholder="blur"
+                      blurDataURL={BLUR_PLACEHOLDER}
                     />
                     <div className="summary__meta">
                       <span className="summary__name">{line.name}</span>

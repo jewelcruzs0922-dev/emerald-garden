@@ -1,18 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { IconBasket, IconCheck, IconHeart } from "@/components/icons";
 import { FREE_SHIPPING_THRESHOLD, formatPeso, type Product } from "@/lib/catalog";
 import { useStore } from "@/lib/store";
+import { useJustAdded } from "@/lib/useJustAdded";
 
 export default function ProductBuyBox({ product }: { product: Product }) {
   const { addToCart, toggleWish, isWished, ready, stockFor } = useStore();
   const [requested, setRequested] = useState(1);
-  const [justAdded, setJustAdded] = useState(false);
-  const timer = useRef<number | undefined>(undefined);
-
-  useEffect(() => () => window.clearTimeout(timer.current), []);
+  const { justAdded, markAdded } = useJustAdded({ duration: 1800 });
 
   const stock = ready ? stockFor(product.id) : product.stock;
   const soldOut = stock <= 0;
@@ -26,9 +24,7 @@ export default function ProductBuyBox({ product }: { product: Product }) {
   const onAdd = () => {
     addToCart(product.id, qty);
     if (soldOut) return;
-    setJustAdded(true);
-    window.clearTimeout(timer.current);
-    timer.current = window.setTimeout(() => setJustAdded(false), 1800);
+    markAdded();
   };
 
   const shortfall = FREE_SHIPPING_THRESHOLD - product.price * qty;

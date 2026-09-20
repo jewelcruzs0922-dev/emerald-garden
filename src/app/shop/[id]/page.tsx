@@ -142,9 +142,9 @@ export default async function ProductPage({ params }: PageProps) {
       <nav className="crumbs crumbs--pdp" aria-label="Breadcrumb">
         <div className="wrap">
           <Link href="/">Home</Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <Link href="/shop">Shop</Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <span aria-current="page">{product.name}</span>
         </div>
       </nav>

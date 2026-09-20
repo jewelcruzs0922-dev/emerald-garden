@@ -21,8 +21,8 @@ export default function PageHead({ crumb, title, lede, anno, children }: PageHea
           <div>
             <nav className="crumbs" aria-label="Breadcrumb">
               <Link href="/">Home</Link>
-              <span>/</span>
-              <span>{crumb}</span>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">{crumb}</span>
             </nav>
             <h1>{title}</h1>
             <p className="lede">{lede}</p>

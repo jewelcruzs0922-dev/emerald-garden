@@ -1,16 +1,20 @@
 import Link from "next/link";
 import ProductCard from "@/components/ProductCard";
+import { RuleSquiggle } from "@/components/icons";
 import { CATALOG_BY_ID, FEATURED_IDS } from "@/lib/catalog";
 
 export default function CollectionSection() {
   const featured = FEATURED_IDS.map((id) => CATALOG_BY_ID[id]).filter(Boolean);
 
   return (
-    <section className="section collection">
+    <section className="section collection rip rip--top rip--bottom">
       <div className="wrap">
         <div className="collection__inner">
           <div className="collection__intro reveal">
-            <span className="eyebrow eyebrow--script">Featured Collection</span>
+            <div className="collection__label">
+              <span className="eyebrow eyebrow--script">Featured Collection</span>
+              <RuleSquiggle className="hand-rule" width={90} height={9} />
+            </div>
             <h2>
               Popular Bonsai
               <br />
@@ -20,7 +24,7 @@ export default function CollectionSection() {
               Discover some of our most loved varieties, carefully selected for their
               beauty, resilience, and unique character.
             </p>
-            <Link className="btn" href="/shop">
+            <Link className="btn collection__btn" href="/shop">
               View All Collection <span className="arw">&rarr;</span>
             </Link>
           </div>
@@ -32,6 +36,7 @@ export default function CollectionSection() {
           </div>
         </div>
       </div>
+
     </section>
   );
 }

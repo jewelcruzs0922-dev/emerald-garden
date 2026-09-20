@@ -1,14 +1,7 @@
 import Link from "next/link";
-import { BrandMark, LeafGlyph } from "@/components/icons";
-
-const FOOTER_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/shop", label: "Shop" },
-  { href: "/about", label: "About" },
-  { href: "/care", label: "Care Guide" },
-  { href: "/journal", label: "Journal" },
-  { href: "/contact", label: "Contact" },
-];
+import { LeafGlyph } from "@/components/icons";
+import Brand from "@/components/Brand";
+import { NAV_LINKS } from "@/lib/seo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -17,19 +10,11 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="wrap">
         <div className="footer__row">
-          <Link className="brand footer__brand" href="/">
-            <span className="brand__mark">
-              <BrandMark />
-            </span>
-            <span className="brand__text">
-              <span className="brand__name">Emerald Garden</span>
-              <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
-            </span>
-          </Link>
+          <Brand linkProps={{ className: "brand footer__brand" }} />
 
           <nav className="footer__nav" aria-label="Footer">
             <ul>
-              {FOOTER_LINKS.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>{link.label}</Link>
                 </li>

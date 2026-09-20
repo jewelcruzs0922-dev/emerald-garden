@@ -6,6 +6,8 @@ import { useMemo, useState, type FormEvent } from "react";
 import { LeafGlyph } from "@/components/icons";
 import { cacheOrder } from "@/components/orders/OrderFallback";
 import { formatPeso } from "@/lib/catalog";
+import { isEmail } from "@/lib/validation";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 import {
   priceCart,
   SHIPPING,
@@ -76,7 +78,7 @@ export default function CheckoutClient() {
     ] as const) {
       if (!payload[field]) local[field] = "This is needed for delivery.";
     }
-    if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(payload.email)) {
+    if (payload.email && !isEmail(payload.email)) {
       local.email = "That email address looks incomplete.";
     }
     setErrors(local);
@@ -251,10 +253,12 @@ export default function CheckoutClient() {
             <li key={line.id}>
               <Image
                 src={`/img/${line.img}`}
-                alt=""
+                alt={`${line.name} bonsai`}
                 width={56}
                 height={56}
                 className="summary__img"
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
               />
               <div className="summary__meta">
                 <span className="summary__name">{line.name}</span>

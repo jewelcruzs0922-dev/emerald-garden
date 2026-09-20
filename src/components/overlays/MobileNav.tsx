@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BrandMark, IconClose } from "@/components/icons";
-import { NAV_LINKS } from "@/components/Header";
+import { IconClose } from "@/components/icons";
+import Brand from "@/components/Brand";
+import { NAV_LINKS } from "@/lib/seo";
 import { useStore } from "@/lib/store";
 
 export default function MobileNav() {
@@ -25,15 +26,7 @@ export default function MobileNav() {
       aria-label="Site menu"
     >
       <div className="mobile-nav__head">
-        <Link className="brand" href="/" onClick={closePanels}>
-          <span className="brand__mark">
-            <BrandMark />
-          </span>
-          <span className="brand__text">
-            <span className="brand__name">Emerald Garden</span>
-            <span className="brand__tag">Bonsai for a Greener Tomorrow</span>
-          </span>
-        </Link>
+        <Brand onClick={closePanels} />
         <button
           className="close-x"
           type="button"

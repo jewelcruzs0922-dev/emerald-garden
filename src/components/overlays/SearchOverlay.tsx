@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef } from "react";
 import { IconClose } from "@/components/icons";
 import { CATALOG, formatPeso } from "@/lib/catalog";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 import { useStore } from "@/lib/store";
 
 const SUGGESTIONS = [
@@ -118,7 +119,7 @@ export default function SearchOverlay() {
                   key={product.id}
                   onClick={closePanels}
                 >
-                  <Image src={`/img/${product.img}`} alt="" width={84} height={68} />
+                  <Image src={`/img/${product.img}`} alt={`${product.name} bonsai`} width={84} height={68} placeholder="blur" blurDataURL={BLUR_PLACEHOLDER} />
                   <div>
                     <h4>{product.name}</h4>
                     <p>

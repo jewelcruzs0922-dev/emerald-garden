@@ -36,6 +36,15 @@ export const SITE = {
   ],
 } as const;
 
+export const NAV_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/shop", label: "Shop" },
+  { href: "/about", label: "About" },
+  { href: "/care", label: "Care Guide" },
+  { href: "/journal", label: "Journal" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
 export const OG_IMAGE = {
   url: "/og.png",
   width: 1200,

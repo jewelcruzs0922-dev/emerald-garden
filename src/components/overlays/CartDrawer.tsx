@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconClose, LeafGlyph } from "@/components/icons";
 import { formatPeso } from "@/lib/catalog";
+import { BLUR_PLACEHOLDER } from "@/lib/image-utils";
 import { useStore } from "@/lib/store";
 
 export default function CartDrawer() {
@@ -54,9 +55,11 @@ export default function CartDrawer() {
               <Image
                 className="cart-line__img"
                 src={`/img/${line.img}`}
-                alt=""
+                alt={`${line.name} bonsai`}
                 width={68}
                 height={68}
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
               />
               <div>
                 <p className="cart-line__name">{line.name}</p>

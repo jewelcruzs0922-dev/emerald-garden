@@ -1,69 +1,86 @@
+import type { SVGProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { IconHeart, LeafGlyph } from "@/components/icons";
+import { LeafGlyph } from "@/components/icons";
 
+/** A hand-drawn outline heart — symmetrical, un-filled, inked in the note's colour. */
+function NoteHeart(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M12 20.7C11.6 20.4 4.2 15.2 4.2 10.1 4.2 7.3 6.1 5.5 8.3 5.5c1.8 0 3 1.2 3.7 2.5.7-1.3 1.9-2.5 3.7-2.5 2.2 0 4.1 1.8 4.1 4.6 0 5.1-7.4 10.3-7.8 10.6z" />
+    </svg>
+  );
+}
+
+/**
+ * The hero is one continuous scene rather than a stack of UI blocks: a single
+ * photograph of the bench, a warm paper veil carrying the copy, and a handful
+ * of hand-drawn props resting on the wooden table in the frame. Everything is
+ * layered inside `.hero` so the header, sunlight and foreground share the same
+ * picture plane.
+ */
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero__bg">
+        <div className="hero__bg">
         <Image
-          src="/img/bonsai-literati-wide.jpg"
-          alt="A literati-style ficus bonsai in an olive pot on a weathered wooden table, lit by warm afternoon light"
+          src="/img/emerald-hero-media.png"
+          alt="Emerald Garden bonsai showcase"
           fill
           priority
           sizes="100vw"
         />
+        <div className="hero__sun" aria-hidden="true" />
       </div>
-      <div className="hero__scrim" aria-hidden="true" />
 
-      <div className="wrap hero__inner">
-        <div className="hero__copy">
-          <h1 className="hero__title">
-            Small Trees,
-            <br />
-            Big Peace
-            <LeafGlyph className="leafglyph" />
-          </h1>
+      <div className="hero__body">
+        <div className="wrap hero__inner">
+          <div className="hero__copy">
+            <h1 className="hero__title">
+              Small Trees,
+              <br />
+              Big Peace
+              <LeafGlyph className="leafglyph" />
+            </h1>
 
-          <p className="hero__lede">
-            At Emerald Garden, we bring nature closer to home with carefully grown bonsai
-            trees — perfect for beginners, collectors, and anyone who finds peace in
-            greenery.
-          </p>
+            <p className="hero__lede">
+              At Emerald Garden, we bring nature closer to home with carefully grown
+              bonsai trees — perfect for beginners, collectors, and anyone who finds peace
+              in greenery.
+            </p>
 
-          <div className="hero__cta">
-            <Link className="btn" href="/shop">
-              Shop Now <span className="arw">&rarr;</span>
-            </Link>
+            <div className="hero__cta">
+              <Link className="btn hero__btn" href="/shop">
+                Shop Now <span className="arw">&rarr;</span>
+              </Link>
+            </div>
           </div>
-        </div>
 
-        <div className="hero__side">
-          <p className="hero__note">
-            A little green goes
-            <br />
-            a long way
-            <IconHeart width={15} height={15} />
-          </p>
+          <aside className="hero__aside">
+            <p className="hero__note">
+              A little
+              <br />
+              green goes
+              <br />
+              a long way
+              <NoteHeart width={30} height={30} />
+            </p>
+          </aside>
         </div>
       </div>
 
-      <svg
-        className="hero__sprout"
-        viewBox="0 0 70 82"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M22 48h26l-3.4 26a3 3 0 0 1-3 2.6h-13a3 3 0 0 1-3-2.6L22 48z" />
-        <path d="M17 48h36" />
-        <path d="M35 48V27" />
-        <path d="M35 33c0-8 5-13.5 13-15-1 8.5-5.6 13.6-13 15zM35 33c0-8-5-13.5-13-15 1 8.5 5.6 13.6 13 15z" />
-        <path d="M35 24c0-5.5 3.4-9.4 9-10.6-.7 4.9-3.9 9.1-9 10.6z" />
-      </svg>
+      <LeafGlyph className="hero__leaf hero__leaf--a" />
+      <LeafGlyph className="hero__leaf hero__leaf--b" />
+      <LeafGlyph className="hero__leaf hero__leaf--c" />
     </section>
   );
 }

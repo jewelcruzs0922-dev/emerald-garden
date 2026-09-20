@@ -2,6 +2,7 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
+/** The mark: a small bonsai — a cloud-canopy tree in a shallow pot. */
 export function BrandMark({ size = 32, ...props }: IconProps & { size?: number }) {
   return (
     <svg
@@ -12,17 +13,25 @@ export function BrandMark({ size = 32, ...props }: IconProps & { size?: number }
       aria-hidden="true"
       {...props}
     >
+      {/* Canopy: three soft lobes with a flat underside. */}
       <path
-        d="M27 5C15.5 6.7 7.6 13.8 5 27c13.2-2.6 20.3-10.5 22-22z"
+        d="M16 4.2c.9 0 1.8.3 2.5.9.8-.7 2-1.1 3.2-1.1 2.5 0 4.5 1.9 4.7 4.3 1.8.5 3 2 3 3.8 0 2.2-1.8 3.9-4 3.9H6.6c-2.2 0-4-1.7-4-3.9 0-1.8 1.2-3.3 3-3.8C5.8 5.9 7.8 4 10.3 4c1.2 0 2.4.4 3.2 1.1.7-.6 1.6-.9 2.5-.9z"
         stroke="currentColor"
         strokeWidth="1.7"
         strokeLinejoin="round"
       />
+      {/* Trunk and shallow pot. */}
       <path
-        d="M5 27C11 19.5 16.5 14.2 24 9.5"
+        d="M16 15.2V22"
         stroke="currentColor"
-        strokeWidth="1.3"
+        strokeWidth="1.7"
         strokeLinecap="round"
+      />
+      <path
+        d="M9.6 22h12.8l-1.6 5.6H11.2z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -63,7 +72,7 @@ export function RuleSquiggle(props: IconProps) {
 
 export function ArrowSquiggle(props: IconProps) {
   return (
-    <svg viewBox="0 0 70 14" fill="none" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 70 20" fill="none" aria-hidden="true" {...props}>
       <path
         d="M2 3c10 8 20 9 30 4 8-4 15-3 22 3"
         stroke="currentColor"
@@ -71,12 +80,97 @@ export function ArrowSquiggle(props: IconProps) {
         strokeLinecap="round"
       />
       <path
-        d="M47 12.6 55.5 9 54 14.5"
+        d="M49 10 54 17 59 10"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+/** Healthy & well-cared for — a seedling rooted in rich soil. */
+export function IconSeedling(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M10.5 33h19" />
+      <path d="M20 33V19.5" />
+      <path d="M20 25c-6.6 0-11.6-4.7-12.4-11 6.8.2 11.9 4.8 12.4 11z" />
+      <path d="M20 25c6.6 0 11.6-4.7 12.4-11-6.8.2-11.9 4.8-12.4 11z" />
+    </svg>
+  );
+}
+
+/** Safe shipping worldwide — a delivery van. */
+export function IconDelivery(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M4 13h16.5v12H4z" />
+      <path d="M20.5 17h5.4l5.1 4.3V25H20.5z" />
+      <circle cx="11" cy="27.5" r="2.6" />
+      <circle cx="26" cy="27.5" r="2.6" />
+    </svg>
+  );
+}
+
+/** Support for every step — a heart cradled in cupped hands. */
+export function IconSupport(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M20 10.6c-1.9-2.6-5.6-2.1-5.6.8 0 2.4 3.2 4.3 5.6 6.1 2.4-1.8 5.6-3.7 5.6-6.1 0-2.9-3.7-3.4-5.6-.8z" />
+      <path d="M8 22.6c0-2.2 1.8-4 4-4h2.2" />
+      <path d="M8 22.6c0 5.2 5.4 9.4 12 9.4s12-4.2 12-9.4" />
+      <path d="M32 22.6c0-2.2-1.8-4-4-4h-2.2" />
+    </svg>
+  );
+}
+
+/** Nature in your space — a potted tree. */
+export function IconPottedTree(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M20 27.5V15" />
+      <path d="M20 21c-6.2 0-10.9-4.4-11.6-10.4 6.4.2 11.2 4.5 11.6 10.4z" />
+      <path d="M20 21c6.2 0 10.9-4.4 11.6-10.4-6.4.2-11.2 4.5-11.6 10.4z" />
+      <path d="M10.6 27.5h18.8" />
+      <path d="M12.2 27.5h15.6l-1.7 6H13.9z" />
     </svg>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IconHeart, LeafGlyph } from "@/components/icons";
+import { LeafGlyph } from "@/components/icons";
 
 const STORIES = [
   {
@@ -31,10 +31,10 @@ export default function StoriesSection() {
     <section className="section stories">
       <div className="stories__photo" aria-hidden="true">
         <Image
-          src="/img/bonsai-green.jpg"
+          src="/img/stories-photo.png"
           alt=""
           fill
-          sizes="(max-width: 1080px) 0px, 265px"
+          sizes="(max-width: 1080px) 0px, 420px"
         />
       </div>
 
@@ -46,7 +46,6 @@ export default function StoriesSection() {
               Real People,
               <br />
               Real Stories
-              <IconHeart width={16} height={16} />
             </h2>
             <p className="lede">
               Join a growing community of bonsai lovers who found peace, beauty, and joy
@@ -72,7 +71,7 @@ export default function StoriesSection() {
                   <span className="note-card__name">{story.name}</span>
                   <span className="note-card__loc">{story.location}</span>
                   <span className="stars" aria-label="5 out of 5 stars">
-                    ★★★★★
+                    <span aria-hidden="true">★★★★★</span>
                   </span>
                 </figcaption>
                 <LeafGlyph width={22} height={22} className="note-card__leaf" />

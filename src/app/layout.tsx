@@ -137,6 +137,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${fraunces.variable} ${nunitoSans.variable} ${caveat.variable} ${caveatBrush.variable}`}
+      /* The inline script below adds a `js` class before hydration so the
+         scroll-reveal styles can be gated on JavaScript. The server cannot
+         know that class, so React is told not to diff these attributes. */
+      suppressHydrationWarning
     >
       <body>
         {/* Runs before the rest of the body parses: gates the scroll-reveal
