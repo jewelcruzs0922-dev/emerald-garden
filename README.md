@@ -6,7 +6,7 @@ TypeScript, with no UI framework and no runtime dependencies beyond React.
 
 **[Live site](https://emerald-garden.vercel.app)** ·
 [CI](https://github.com/jewelcruzs0922-dev/emerald-garden/actions) runs typecheck,
-lint, formatting and 57 end-to-end tests on every push.
+lint, formatting, unit tests and 57 end-to-end tests on every push.
 
 ![The home page](docs/home.jpg)
 
@@ -42,7 +42,12 @@ npm run build && npm start   # production
 | `npm run typecheck`               | `tsc --noEmit`                                  |
 | `npm run lint`                    | ESLint (flat config)                            |
 | `npm run format` / `format:check` | Prettier                                        |
+| `npm test`                        | Unit tests for the pricing and inventory logic  |
 | `npm run test:e2e`                | Playwright: 57 tests against a production build |
+
+The unit tests use Node's built-in test runner and native TypeScript support —
+no bundler, no extra dependency. `tests/loader.mjs` is a tiny resolver hook that
+teaches Node the `@/` alias and extensionless imports the source already uses.
 
 The Playwright suite runs a real `next build` and drives the result, so orders
 actually settle and stock actually decrements. It needed no browser download —
@@ -187,6 +192,10 @@ src/
     store.tsx           cart, wishlist, panels, availability, toasts
     seo.ts              site constants, per-page metadata helper
     structured-data.ts  schema.org builders
+tests/
+  pricing.test.ts       server-side re-pricing, shipping and cart issues
+  inventory.test.ts     stock reservation, oversell protection, atomicity
+  loader.mjs            resolves @/ and extensions for the node:test runner
 ```
 
 `catalog.ts` and `product-details.ts` are separate on purpose: one holds the
@@ -219,6 +228,6 @@ This is a portfolio piece, not a production shop.
 - **Placeholder content remains:** the workshop address, phone numbers and
   testimonials are invented. There are deliberately no social links, rather
   than four that go nowhere.
-- **No unit or component tests.** Coverage is end-to-end only; the pricing and
-  inventory logic in particular would benefit from fast unit tests.
+- **No component tests.** Unit coverage targets the pricing and inventory
+  logic — the commerce core — and the UI is exercised end-to-end.
 - **No accounts, order history, stock notifications or coupon codes.**

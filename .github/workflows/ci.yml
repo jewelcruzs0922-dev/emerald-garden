@@ -27,6 +27,9 @@ jobs:
       - name: Formatting
         run: npm run format:check
 
+      - name: Unit tests
+        run: npm test
+
       # The suite drives a production build, so it exercises the same output
       # that gets deployed rather than a dev server.
       - name: Install browsers

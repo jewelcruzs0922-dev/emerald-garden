@@ -11,12 +11,14 @@ type Sold = Record<string, number>;
 const FILE = "inventory";
 
 export class StockError extends Error {
-  constructor(
-    readonly productId: string,
-    readonly remaining: number,
-  ) {
+  readonly productId: string;
+  readonly remaining: number;
+
+  constructor(productId: string, remaining: number) {
     super(`Insufficient stock for ${productId} (${remaining} remaining)`);
     this.name = "StockError";
+    this.productId = productId;
+    this.remaining = remaining;
   }
 }
 
