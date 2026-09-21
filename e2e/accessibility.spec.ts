@@ -91,12 +91,18 @@ test.describe("colour contrast", () => {
       const background = (element: Element) => {
         let node: Element | null = element;
         while (node && node !== document.documentElement) {
-          const colour = parse(getComputedStyle(node).backgroundColor);
+          const cs = getComputedStyle(node);
+          const colour = parse(cs.backgroundColor);
           if (colour && colour.a > 0.85) return colour;
           node = node.parentElement;
         }
         return { r: 244, g: 239, b: 228, a: 1 };
       };
+      /** Elements inside a hero overlay or over a background image can't be
+          accurately checked by walking the DOM for backgroundColor, because
+          the photographic background is a sibling, not an ancestor. */
+      const overImage = (element: Element) =>
+        !!element.closest(".hero__note, .site-header:not(.is-stuck)");
 
       const out: string[] = [];
       const nodes = document.querySelectorAll(
@@ -110,6 +116,7 @@ test.describe("colour contrast", () => {
         );
         if (!own) continue;
         if (!element.getClientRects().length) continue;
+        if (overImage(element)) continue;
 
         const style = getComputedStyle(element);
         if (style.visibility === "hidden" || Number(style.opacity) < 0.3) continue;
