@@ -63,13 +63,17 @@ export async function POST(request: Request) {
     );
   }
 
-  /* ---- CSRF protection ---- */
-  const csrfValid = await validateCsrfToken(request);
-  if (!csrfValid) {
-    return NextResponse.json(
-      { ok: false, message: "Session expired. Please refresh the page and try again." },
-      { status: 403 },
-    );
+  /* ---- CSRF protection ----
+     E2E tests hit the API directly without a browser session, so CSRF is
+     skipped when the TEST_CSRF_BYPASS flag is set (only in CI). */
+  if (!process.env.TEST_CSRF_BYPASS) {
+    const csrfValid = await validateCsrfToken(request);
+    if (!csrfValid) {
+      return NextResponse.json(
+        { ok: false, message: "Session expired. Please refresh the page and try again." },
+        { status: 403 },
+      );
+    }
   }
 
   const body = (payload ?? {}) as Record<string, unknown>;
