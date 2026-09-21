@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Header, navigation, brand
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 800;
+  background: rgba(247, 242, 231, 0.95);
+  backdrop-filter: none;
+  transition:
+    box-shadow 0.35s var(--ease),
+    background 0.35s var(--ease);
+}
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--line-2);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.site-header.is-stuck {
+  box-shadow: 0 10px 26px -24px rgba(48, 36, 20, 0.8);
+}
+.site-header.is-stuck::after {
+  opacity: 1;
+}
+
+/* The home page opens on a photograph, so its header floats directly on the
+   image instead of sitting in a box. It regains a readable ground the moment
+   the page scrolls and the `.is-stuck` state takes over. Scoped with :has so
+   every other page keeps the ordinary paper bar. */
+body:has(.hero) .site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+body:has(.hero) .site-header::after {
+  opacity: 0;
+}
+body:has(.hero) .site-header.is-stuck {
+  background: var(--paper);
+  backdrop-filter: none;
+}
+body:has(.hero) .site-header.is-stuck::after {
+  opacity: 1;
+}
+
+body:has(.hero) .site-header:not(.is-stuck) .main-nav a {
+  color: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .main-nav a:hover {
+  color: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .main-nav a[aria-current="page"] {
+  color: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .main-nav a[aria-current="page"]::after {
+  background: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .main-nav a:hover::after {
+  background: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .icon-btn {
+  color: var(--cream);
+}
+body:has(.hero) .site-header:not(.is-stuck) .icon-btn:hover {
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 2rem);
+  padding-block: clamp(0.85rem, 1.6vw, 1.15rem);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: 0;
+}
+.brand__mark {
+  color: var(--forest);
+  flex: none;
+}
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.brand__name {
+  font-family: var(--serif);
+  font-size: 1.36rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--forest-2);
+  white-space: nowrap;
+}
+.brand__tag {
+  font-family: var(--hand);
+  font-size: 0.98rem;
+  color: var(--ink-3);
+  margin-top: 3px;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.9rem);
+  justify-content: center;
+}
+.main-nav a {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--ink-2);
+  padding-block: 0.35rem;
+  transition: color 0.28s var(--ease);
+}
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1.5px;
+  background: var(--terra-2);
+  transition: right 0.34s var(--ease);
+}
+.main-nav a:hover {
+  color: var(--forest-2);
+}
+.main-nav a:hover::after {
+  right: 0;
+}
+.main-nav a[aria-current="page"] {
+  color: var(--forest-2);
+}
+.main-nav a[aria-current="page"]::after {
+  right: 0;
+  background: var(--sage);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  justify-self: end;
+}
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: var(--ink-2);
+  transition:
+    color 0.25s var(--ease),
+    background 0.25s var(--ease),
+    transform 0.25s var(--ease);
+}
+.icon-btn svg {
+  width: 26px;
+  height: 26px;
+}
+.icon-btn:hover {
+  color: var(--forest-2);
+  background: rgba(139, 156, 124, 0.18);
+  transform: translateY(-1px);
+}
+.icon-btn__badge {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--terra-2);
+  color: var(--cream);
+  font-size: 0.64rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  transform: scale(0);
+  transition: transform 0.3s var(--ease);
+}
+.icon-btn__badge.is-on {
+  transform: scale(1);
+}
+.menu-btn {
+  display: none;
+}
+
+.nav-script {
+  font-family: var(--hand);
+  font-size: 1.26rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--terra-ink);
+  display: inline-block;
+  transform: rotate(-4deg) translateY(-1px);
+  white-space: nowrap;
+  padding-inline: 0.15rem;
+}

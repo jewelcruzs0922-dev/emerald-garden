@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  position: relative;
+  background: var(--forest-2);
+  color: rgba(251, 248, 240, 0.82);
+  padding-top: clamp(2rem, 3.6vw, 2.8rem);
+  overflow: clip;
+}
+.site-footer a {
+  transition: color 0.25s var(--ease);
+}
+.site-footer a:hover {
+  color: #fff;
+}
+.footer__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.4rem;
+}
+.footer__brand .brand__mark {
+  color: var(--sage-2);
+}
+.footer__brand .brand__name {
+  color: var(--cream);
+}
+.footer__brand .brand__tag {
+  color: rgba(251, 248, 240, 0.6);
+}
+.footer__nav ul {
+  display: flex;
+  gap: clamp(1rem, 2.2vw, 2rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer__nav a {
+  font-size: 0.9rem;
+  color: rgba(251, 248, 240, 0.82);
+}
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: clamp(1.6rem, 3vw, 2.4rem);
+  padding-block: 1.2rem;
+  border-top: 1px solid var(--line-light);
+  font-size: 0.8rem;
+  color: rgba(251, 248, 240, 0.6);
+}
+.footer__hand {
+  font-family: var(--hand);
+  font-size: 1.2rem;
+  color: var(--sage-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}

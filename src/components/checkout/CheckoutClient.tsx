@@ -21,6 +21,16 @@ import { useStore } from "@/lib/store";
 type Errors = Record<string, string>;
 type Status = "idle" | "submitting" | "error";
 
+async function fetchCsrfToken(): Promise<string | null> {
+  try {
+    const res = await fetch("/api/csrf");
+    const data = await res.json();
+    return data.ok ? data.token : null;
+  } catch {
+    return null;
+  }
+}
+
 const FIELDS = [
   { name: "name", label: "Full name", autoComplete: "name", span: 2 },
   { name: "email", label: "Email", autoComplete: "email", type: "email", span: 1 },
@@ -94,9 +104,13 @@ export default function CheckoutClient() {
     setIssues([]);
 
     try {
+      const csrfToken = await fetchCsrfToken();
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      if (csrfToken) headers["x-csrf-token"] = csrfToken;
+
       const response = await fetch("/api/checkout", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(payload),
       });
       const result = (await response.json().catch(() => null)) as {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import Benefits from "@/components/home/Benefits";
 import CollectionSection from "@/components/home/CollectionSection";
 import Hero from "@/components/home/Hero";
@@ -16,13 +17,27 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main id="main">
-      <Hero />
-      <Benefits />
-      <StorySection />
-      <CollectionSection />
-      <HowItWorks />
-      <StoriesSection />
-      <Newsletter />
+      <ErrorBoundary name="Hero">
+        <Hero />
+      </ErrorBoundary>
+      <ErrorBoundary name="Benefits">
+        <Benefits />
+      </ErrorBoundary>
+      <ErrorBoundary name="StorySection">
+        <StorySection />
+      </ErrorBoundary>
+      <ErrorBoundary name="CollectionSection">
+        <CollectionSection />
+      </ErrorBoundary>
+      <ErrorBoundary name="HowItWorks">
+        <HowItWorks />
+      </ErrorBoundary>
+      <ErrorBoundary name="StoriesSection">
+        <StoriesSection />
+      </ErrorBoundary>
+      <ErrorBoundary name="Newsletter">
+        <Newsletter />
+      </ErrorBoundary>
     </main>
   );
 }

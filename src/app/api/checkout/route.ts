@@ -19,6 +19,7 @@ import {
   type PricingIssue,
 } from "@/lib/commerce/pricing";
 import { resolveOrigin } from "@/lib/http";
+import { validateCsrfToken } from "@/lib/csrf";
 import { clientKey, rateLimit } from "@/lib/rate-limit";
 import { asString, clean, isEmail, type FieldErrors } from "@/lib/validation";
 
@@ -59,6 +60,15 @@ export async function POST(request: Request) {
     return NextResponse.json(
       { ok: false, message: "Too many checkout attempts — please wait a moment." },
       { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } },
+    );
+  }
+
+  /* ---- CSRF protection ---- */
+  const csrfValid = await validateCsrfToken(request);
+  if (!csrfValid) {
+    return NextResponse.json(
+      { ok: false, message: "Session expired. Please refresh the page and try again." },
+      { status: 403 },
     );
   }
 

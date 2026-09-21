@@ -8,7 +8,16 @@ import RevealController from "@/components/RevealController";
 import { SITE } from "@/lib/seo";
 import { StoreProvider } from "@/lib/store";
 import { organisationSchema, websiteSchema } from "@/lib/structured-data";
-import "./globals.css";
+import "./css/tokens.css";
+import "./css/reset.css";
+import "./css/layout.css";
+import "./css/components.css";
+import "./css/header.css";
+import "./css/overlays.css";
+import "./css/home.css";
+import "./css/footer.css";
+import "./css/animations.css";
+import "./css/responsive.css";
 import "./pages.css";
 
 /* Only the weights the stylesheet actually uses — every declared file is

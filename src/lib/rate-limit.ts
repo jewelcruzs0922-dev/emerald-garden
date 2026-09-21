@@ -21,8 +21,26 @@ export function rateLimit(key: string, limit = 5, windowMs = WINDOW_MS): RateLim
   const recent = (hits.get(key) ?? []).filter((at) => now - at < windowMs);
   recent.push(now);
 
-  /* Crude memory guard — a real store would expire keys instead. */
-  if (hits.size > MAX_ENTRIES) hits.clear();
+  /* Evict oldest entries instead of clearing everything —
+     avoids resetting limits for all clients simultaneously. */
+  if (hits.size > MAX_ENTRIES) {
+    const cutoff = now - windowMs;
+    for (const [k, timestamps] of hits) {
+      const alive = timestamps.filter((t) => t > cutoff);
+      if (alive.length === 0) hits.delete(k);
+      else hits.set(k, alive);
+    }
+    /* If still over capacity after evicting expired entries, remove the
+       oldest 10% of remaining keys. */
+    if (hits.size > MAX_ENTRIES) {
+      const entries = [...hits.entries()].sort((a, b) => a[1][0] - b[1][0]);
+      const remove = Math.ceil(entries.length * 0.1);
+      for (let i = 0; i < remove; i++) {
+        hits.delete(entries[i][0]);
+      }
+    }
+  }
+
   hits.set(key, recent);
 
   const ok = recent.length <= limit;

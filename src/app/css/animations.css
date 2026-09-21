@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Reveal animations & skeleton loading states
+   ========================================================================== */
+
+/* Gated behind `.js` (set by an inline script in the layout) so that a failed
+   or blocked bundle leaves the content readable rather than invisible. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.9s var(--ease),
+    transform 0.9s var(--ease);
+}
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .photo > img,
+  .product__img img {
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Skeleton loading states
+   -------------------------------------------------------------------------- */
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+.skeleton {
+  background: var(--line-2);
+  border-radius: 4px;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+.skeleton--heading {
+  height: 1.6rem;
+  width: 50%;
+}
+.skeleton--text {
+  height: 0.9rem;
+}
+.skeleton--img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 6px;
+}
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.85rem, 1.6vw, 1.35rem);
+}
+.skeleton-card {
+  padding: 0.5rem 0;
+}
+.pdp-skeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.checkout-skeleton {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (max-width: 1080px) {
+  .skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pdp-skeleton {
+    grid-template-columns: 1fr;
+  }
+  .checkout-skeleton {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .skeleton-grid {
+    grid-template-columns: 1fr;
+  }
+}
