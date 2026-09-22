@@ -2,36 +2,66 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-/** The mark: a small bonsai — a cloud-canopy tree in a shallow pot. */
 export function BrandMark({ size = 32, ...props }: IconProps & { size?: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 32 32"
+      viewBox="0 0 100 100"
       fill="none"
       aria-hidden="true"
       {...props}
     >
-      {/* Canopy: three soft lobes with a flat underside. */}
-      <path
-        d="M16 4.2c.9 0 1.8.3 2.5.9.8-.7 2-1.1 3.2-1.1 2.5 0 4.5 1.9 4.7 4.3 1.8.5 3 2 3 3.8 0 2.2-1.8 3.9-4 3.9H6.6c-2.2 0-4-1.7-4-3.9 0-1.8 1.2-3.3 3-3.8C5.8 5.9 7.8 4 10.3 4c1.2 0 2.4.4 3.2 1.1.7-.6 1.6-.9 2.5-.9z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
+      {/* Badge follows currentColor — forest in the header, sage in the footer */}
+      <circle cx="50" cy="50" r="49" fill="currentColor" />
+      <circle
+        cx="50"
+        cy="50"
+        r="45"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="1.5"
+        opacity="0.9"
       />
-      {/* Trunk and shallow pot. */}
+      <circle
+        cx="50"
+        cy="50"
+        r="41.5"
+        fill="none"
+        stroke="#fff"
+        strokeWidth="0.6"
+        opacity="0.35"
+      />
+      <g fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M50.5 70c-.5-7 3.5-11 2-18.5" strokeWidth="3" opacity="0.95" />
+        <path d="M52 54c3.5-1.5 7.5-3.5 11-5.5" strokeWidth="1.8" opacity="0.85" />
+        <path d="M49.5 59c-3.5-.6-7-1.8-10.5-3.2" strokeWidth="1.6" opacity="0.85" />
+        <path d="M51.5 46c-.8-2.5-.4-5.5 1-8.5" strokeWidth="1.7" opacity="0.85" />
+      </g>
       <path
-        d="M16 15.2V22"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
+        fill="#fff"
+        d="M50 19.5c8.8 0 16.4 5.2 18.2 12.8 1 4.4-1.2 8.8-5.5 10.4l-25.4.2c-4.5-1.5-6.9-6-6.1-10.5C32.5 24.7 40.5 19.5 50 19.5z"
       />
       <path
-        d="M9.6 22h12.8l-1.6 5.6H11.2z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
+        fill="#fff"
+        d="M32.5 47c4.8-.2 8.6 2.6 9.2 6.6.6 4-2.4 7.6-6.9 8.3-4.7.7-9-2.1-9.8-6.3-.8-4.4 2.7-8.4 7.5-8.6z"
+      />
+      <path
+        fill="#fff"
+        d="M67 43.5c4.5.1 8 3.2 7.9 7.1-.2 4-3.9 7-8.2 6.7-4.4-.3-7.6-3.9-7.3-7.9.3-3.8 3.6-6.7 7.6-5.9z"
+      />
+      <path
+        fill="#fff"
+        d="M47.2 71c-.6-6.5 3.2-10.2 2.1-16.8-.7-4.4-3.4-6.7-2.6-11.2l4.8.6c-.7 3.6 1.5 5.7 2.2 9.6 1.2 6.4-2.4 10.2-1.9 16.7l-4.6 1.1z"
+      />
+      <path
+        fill="#fff"
+        d="M36.5 72.5h27c.7 0 1.2.6 1.1 1.3l-1.5 8.2c-.2 1-1 1.7-2 1.7H38.9c-1 0-1.8-.7-2-1.7l-1.5-8.2c-.1-.7.4-1.3 1.1-1.3z"
+      />
+      <rect x="33.5" y="69" width="33" height="4.5" rx="1.6" fill="#fff" />
+      <path
+        d="M41.5 84.7h5.2v1.8c0 .7-.5 1.2-1.2 1.2h-2.8c-.7 0-1.2-.5-1.2-1.2v-1.8zm11.8 0h5.2v1.8c0 .7-.5 1.2-1.2 1.2h-2.8c-.7 0-1.2-.5-1.2-1.2v-1.8z"
+        fill="currentColor"
       />
     </svg>
   );
@@ -72,7 +102,7 @@ export function RuleSquiggle(props: IconProps) {
 
 export function ArrowSquiggle(props: IconProps) {
   return (
-    <svg viewBox="0 0 70 20" fill="none" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 70 14" fill="none" aria-hidden="true" {...props}>
       <path
         d="M2 3c10 8 20 9 30 4 8-4 15-3 22 3"
         stroke="currentColor"
@@ -80,97 +110,12 @@ export function ArrowSquiggle(props: IconProps) {
         strokeLinecap="round"
       />
       <path
-        d="M49 10 54 17 59 10"
+        d="M47 12.6 55.5 9 54 14.5"
         stroke="currentColor"
         strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-    </svg>
-  );
-}
-
-/** Healthy & well-cared for — a seedling rooted in rich soil. */
-export function IconSeedling(props: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M10.5 33h19" />
-      <path d="M20 33V19.5" />
-      <path d="M20 25c-6.6 0-11.6-4.7-12.4-11 6.8.2 11.9 4.8 12.4 11z" />
-      <path d="M20 25c6.6 0 11.6-4.7 12.4-11-6.8.2-11.9 4.8-12.4 11z" />
-    </svg>
-  );
-}
-
-/** Safe shipping worldwide — a delivery van. */
-export function IconDelivery(props: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M4 13h16.5v12H4z" />
-      <path d="M20.5 17h5.4l5.1 4.3V25H20.5z" />
-      <circle cx="11" cy="27.5" r="2.6" />
-      <circle cx="26" cy="27.5" r="2.6" />
-    </svg>
-  );
-}
-
-/** Support for every step — a heart cradled in cupped hands. */
-export function IconSupport(props: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M20 10.6c-1.9-2.6-5.6-2.1-5.6.8 0 2.4 3.2 4.3 5.6 6.1 2.4-1.8 5.6-3.7 5.6-6.1 0-2.9-3.7-3.4-5.6-.8z" />
-      <path d="M8 22.6c0-2.2 1.8-4 4-4h2.2" />
-      <path d="M8 22.6c0 5.2 5.4 9.4 12 9.4s12-4.2 12-9.4" />
-      <path d="M32 22.6c0-2.2-1.8-4-4-4h-2.2" />
-    </svg>
-  );
-}
-
-/** Nature in your space — a potted tree. */
-export function IconPottedTree(props: IconProps) {
-  return (
-    <svg
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M20 27.5V15" />
-      <path d="M20 21c-6.2 0-10.9-4.4-11.6-10.4 6.4.2 11.2 4.5 11.6 10.4z" />
-      <path d="M20 21c6.2 0 10.9-4.4 11.6-10.4-6.4.2-11.2 4.5-11.6 10.4z" />
-      <path d="M10.6 27.5h18.8" />
-      <path d="M12.2 27.5h15.6l-1.7 6H13.9z" />
     </svg>
   );
 }
