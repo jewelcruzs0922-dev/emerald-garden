@@ -120,6 +120,91 @@ export function ArrowSquiggle(props: IconProps) {
   );
 }
 
+/** Healthy & well-cared for — a seedling rooted in rich soil. */
+export function IconSeedling(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M10.5 33h19" />
+      <path d="M20 33V19.5" />
+      <path d="M20 25c-6.6 0-11.6-4.7-12.4-11 6.8.2 11.9 4.8 12.4 11z" />
+      <path d="M20 25c6.6 0 11.6-4.7 12.4-11-6.8.2-11.9 4.8-12.4 11z" />
+    </svg>
+  );
+}
+
+/** Safe shipping worldwide — a delivery van. */
+export function IconDelivery(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M4 13h16.5v12H4z" />
+      <path d="M20.5 17h5.4l5.1 4.3V25H20.5z" />
+      <circle cx="11" cy="27.5" r="2.6" />
+      <circle cx="26" cy="27.5" r="2.6" />
+    </svg>
+  );
+}
+
+/** Support for every step — a heart cradled in cupped hands. */
+export function IconSupport(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M20 10.6c-1.9-2.6-5.6-2.1-5.6.8 0 2.4 3.2 4.3 5.6 6.1 2.4-1.8 5.6-3.7 5.6-6.1 0-2.9-3.7-3.4-5.6-.8z" />
+      <path d="M8 22.6c0-2.2 1.8-4 4-4h2.2" />
+      <path d="M8 22.6c0 5.2 5.4 9.4 12 9.4s12-4.2 12-9.4" />
+      <path d="M32 22.6c0-2.2-1.8-4-4-4h-2.2" />
+    </svg>
+  );
+}
+
+/** Nature in your space — a potted tree. */
+export function IconPottedTree(props: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 40 40"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M20 27.5V15" />
+      <path d="M20 21c-6.2 0-10.9-4.4-11.6-10.4 6.4.2 11.2 4.5 11.6 10.4z" />
+      <path d="M20 21c6.2 0 10.9-4.4 11.6-10.4-6.4.2-11.2 4.5-11.6 10.4z" />
+      <path d="M10.6 27.5h18.8" />
+      <path d="M12.2 27.5h15.6l-1.7 6H13.9z" />
+    </svg>
+  );
+}
+
 export function IconSearch(props: IconProps) {
   return (
     <svg
