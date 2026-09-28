@@ -1,5 +1,9 @@
 # Emerald Garden
 
+[![Live](https://img.shields.io/badge/live-emerald--garden.vercel.app-000000?logo=vercel&logoColor=white)](https://emerald-garden.vercel.app)
+[![CI](https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/jewelcruzs0922-dev/emerald-garden/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-2F6FEB)](LICENSE)
+
 A storefront for a small bonsai nursery — a design-led marketing site with a
 working commerce flow behind it. Built with Next.js App Router, React 19 and
 TypeScript, with no UI framework and no runtime dependencies beyond React.
