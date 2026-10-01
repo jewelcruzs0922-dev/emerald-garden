@@ -18,7 +18,7 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
-    "next": "16.3.4",
+    "next": "16.3.6",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
@@ -28,7 +28,7 @@
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.4",
+    "eslint-config-next": "^16.3.6",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.9.8",
     "typescript": "^5.9.3"
