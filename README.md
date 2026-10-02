@@ -10,7 +10,8 @@ TypeScript, with no UI framework and no runtime dependencies beyond React.
 
 **[Live site](https://emerald-garden.vercel.app)** ·
 [CI](https://github.com/jewelcruzs0922-dev/emerald-garden/actions) runs typecheck,
-lint, formatting, unit tests and 57 end-to-end tests on every push.
+lint, formatting, unit tests and 57 end-to-end tests on every push to `main` and
+on pull requests.
 
 ![The home page](docs/home.jpg)
 
@@ -71,7 +72,7 @@ JSON on disk. See [Configuration](#configuration) to switch anything on.
 | Marketing | `/`, `/about`, `/care`, `/journal`, `/contact`                                                                       |
 | Catalogue | `/shop`, `/shop/[id]` (10 product pages)                                                                             |
 | Commerce  | `/checkout`, `/orders/[id]`                                                                                          |
-| API       | `/api/checkout`, `/api/checkout/return`, `/api/inventory`, `/api/contact`, `/api/newsletter`, `/api/webhooks/stripe` |
+| API       | `/api/checkout`, `/api/checkout/return`, `/api/csrf`, `/api/inventory`, `/api/contact`, `/api/newsletter`, `/api/webhooks/stripe` |
 | SEO       | `/sitemap.xml` (16 URLs), `/robots.txt`, `/og.png`                                                                   |
 
 **Working end to end:** browse → product page → basket → checkout → payment →
@@ -210,6 +211,14 @@ tests/
   pricing.test.ts       server-side re-pricing, shipping and cart issues
   inventory.test.ts     stock reservation, oversell protection, atomicity
   loader.mjs            resolves @/ and extensions for the node:test runner
+  register.mjs          installs loader.mjs (registerHooks, with register fallback)
+e2e/
+  commerce.spec.ts      checkout API guards and the full purchase flow
+  storefront.spec.ts    every route renders, home, catalogue, product pages
+  orders.spec.ts        receipts: server render, sessionStorage fallback
+  accessibility.spec.ts off-canvas focus management, colour contrast
+  seo.spec.ts           metadata, canonicals, sitemap, robots
+  global-setup.ts       production build + server for the suite
 ```
 
 `catalog.ts` and `product-details.ts` are separate on purpose: one holds the
