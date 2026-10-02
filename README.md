@@ -67,13 +67,13 @@ JSON on disk. See [Configuration](#configuration) to switch anything on.
 
 ## What is here
 
-| Area      | Routes                                                                                                               |
-| --------- | -------------------------------------------------------------------------------------------------------------------- |
-| Marketing | `/`, `/about`, `/care`, `/journal`, `/contact`                                                                       |
-| Catalogue | `/shop`, `/shop/[id]` (10 product pages)                                                                             |
-| Commerce  | `/checkout`, `/orders/[id]`                                                                                          |
+| Area      | Routes                                                                                                                            |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Marketing | `/`, `/about`, `/care`, `/journal`, `/contact`                                                                                    |
+| Catalogue | `/shop`, `/shop/[id]` (10 product pages)                                                                                          |
+| Commerce  | `/checkout`, `/orders/[id]`                                                                                                       |
 | API       | `/api/checkout`, `/api/checkout/return`, `/api/csrf`, `/api/inventory`, `/api/contact`, `/api/newsletter`, `/api/webhooks/stripe` |
-| SEO       | `/sitemap.xml` (16 URLs), `/robots.txt`, `/og.png`                                                                   |
+| SEO       | `/sitemap.xml` (16 URLs), `/robots.txt`, `/og.png`                                                                                |
 
 **Working end to end:** browse → product page → basket → checkout → payment →
 order confirmation, with server-side pricing, atomic stock reservation and an
